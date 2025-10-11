@@ -11,3 +11,9 @@ Portfolio Project
 
    <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6eaca053-62d1-4b9e-9a00-366e7e8afac4" />
 
+ <<<<<<< Skills Section >>>>>>>
+ <img width="1884" height="890" alt="image" src="https://github.com/user-attachments/assets/e2a9ef80-fc9b-4c71-9bc8-17c06ccb0b63" />
+
+
+ <<<<<<< Latest Projects>>>>>>>>
+<img width="1884" height="963" alt="image" src="https://github.com/user-attachments/assets/f73ec343-ef15-4ab6-a4eb-9e2226e3ded8" />
