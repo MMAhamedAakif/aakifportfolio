@@ -751,7 +751,7 @@ portfolio {
     border: 2px solid var(--hover-color);
     box-shadow: var(--neon-box-shodow);
     padding-bottom: 3%;
-} 
+}
 
 .port-image {
     display: flex;
@@ -759,8 +759,9 @@ portfolio {
     justify-content: center;
     height: 100%;
     width: 100%;
-} 
-.port-image img{
+}
+
+.port-image img {
     width: 100%;
     opacity: .5s;
     height: 100%;
@@ -768,23 +769,24 @@ portfolio {
 }
 
 
-.port-box:hover .port-image img{
+.port-box:hover .port-image img {
     transform: scale(1.1);
 }
 
 
-.port-content h3{
+.port-content h3 {
 
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--hover-color);
-}   
-.port-content p{
+}
+
+.port-content p {
     font-size: .8rem;
     margin: 5px 5px 15px 5px;
 }
 
-.port-content a{
+.port-content a {
     background: #fff;
     border-radius: 50%;
     display: inline-flex;
@@ -798,20 +800,21 @@ portfolio {
 
 /* CONTACT SECTION CSS///////////////////////////////////////// */
 
-.contant{
+.contact {
     background: var(--secon-bg-color);
     width: 100%;
 }
 
-.contant form{
+.contact form {
     text-align: center;
     max-width: 50rem;
     margin: 1rem auto;
     margin-bottom: 3rem;
 
 }
-.contant form input,
-.contant form textarea{
+
+.contact form input,
+.contact form textarea {
     width: 100%;
     color: var(--text-color);
     background: var(--bg-color);
@@ -821,12 +824,7 @@ portfolio {
     padding: .7rem;
 }
 
-.contant form textarea{
-
-
-
-
-
+.contact form textarea {}
 
 
 
