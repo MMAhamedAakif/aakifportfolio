@@ -750,6 +750,7 @@ portfolio {
     align-items: center;
     border: 2px solid var(--hover-color);
     box-shadow: var(--neon-box-shodow);
+    padding-bottom: 3%;
 } 
 
 .port-image {
@@ -776,10 +777,11 @@ portfolio {
 
     font-size: 1.5rem;
     font-weight: 600;
+    color: var(--hover-color);
 }   
 .port-content p{
     font-size: .8rem;
-    margin: 5px 0 15px 0;
+    margin: 5px 5px 15px 5px;
 }
 
 .port-content a{
@@ -792,17 +794,34 @@ portfolio {
     height: 50px;
     border: 1px solid var(--hover-color);
     outline: 2px solid #fff;
-
 }
 
+/* CONTACT SECTION CSS///////////////////////////////////////// */
 
+.contant{
+    background: var(--secon-bg-color);
+    width: 100%;
+}
 
+.contant form{
+    text-align: center;
+    max-width: 50rem;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
 
+}
+.contant form input,
+.contant form textarea{
+    width: 100%;
+    color: var(--text-color);
+    background: var(--bg-color);
+    margin-bottom: .8rem;
+    border: none;
+    border-radius: 5px;
+    padding: .7rem;
+}
 
-
-
-
-
+.contant form textarea{
 
 
 
