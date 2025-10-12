@@ -707,12 +707,8 @@ svg {
 
 
 .portfolio {
-    padding: 100px 8%;
-    text-align: center;
     background: var(--bg-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
+    width: 100%;
 }
 
 .main-text span {
@@ -730,6 +726,10 @@ svg {
     margin-bottom: 40px;
 }
 
+.container{
+    width: 100%;
+    margin-bottom: 50px;
+}
 .fillter-buttons {
     margin-bottom: 50px;
 }
@@ -829,6 +829,21 @@ svg {
 
 .contactme {
     background: var(--secon-bg-color);
+}
+
+.main-text span {
+    display: block;
+    color: #aaa;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.main-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--hover-color);
+    margin-bottom: 40px;
 }
 
 .contactme form {
