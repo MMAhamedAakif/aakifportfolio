@@ -344,6 +344,13 @@ a.btn:nth-child(2)::before {
     overflow: visible;
 }
 
+
+
+
+
+
+
+
 /* SVG blob */
 svg {
     width: 100%;
@@ -570,6 +577,12 @@ svg {
     background: var(--secon-bg-color);
 }
 
+.robot {
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
 .skill-main {
     width: 100%;
     display: grid;
@@ -756,6 +769,12 @@ svg {
     gap: 40px;
     justify-content: center;
 }
+.light {
+    display: none;
+    width: 100%;
+    height: 300px;
+    
+}
 
 .port-box {
     background: var(--card-bg);
@@ -867,7 +886,6 @@ svg {
 }
 
 .contactme form textarea {}
-
 
 
 
