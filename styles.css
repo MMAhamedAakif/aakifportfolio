@@ -938,6 +938,34 @@ svg {
     border: 2px solid var(--hover-color);
 }
 
+/* Contact form button styled like other .btn buttons */
+.contactme .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: var(--hover-color);
+    color: var(--bg-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.6s;
+    box-shadow: var(--neon-box-shodow);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 2px solid var(--hover-color);
+    cursor: pointer;
+}
+
+.contactme .btn:hover {
+    color: var(--hover-color);
+    background: var(--bg-color);
+    border: 2px solid var(--hover-color);
+}
+
 
 
 
