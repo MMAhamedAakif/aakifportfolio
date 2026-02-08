@@ -847,8 +847,16 @@ svg {
 /* CONTACT SECTION CSS//////////////////////////////////////// */
 
 
+
 .contactme {
     background: var(--secon-bg-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+    box-sizing: border-box;
 }
 
 .main-text span {
@@ -868,10 +876,13 @@ svg {
 
 .contactme form {
     text-align: center;
-    max-width: 50rem;
-    margin: 1rem auto;
-    margin-bottom: 3rem;
-
+    max-width: 600px;
+    width: 100%;
+    margin: 1rem auto 3rem auto;
+    background: var(--bg-color);
+    border-radius: 25px;
+    box-shadow: var(--neon-box-shodow);
+    padding: 2rem 2rem 1.5rem 2rem;
 }
 
 .contactme form input,
