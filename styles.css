@@ -965,11 +965,18 @@ svg {
     }
 
     .home-content h1 {
-        font-size: 2rem;
+        font-size: 1.7rem;
+        line-height: 1.2;
+        word-break: break-word;
     }
 
     .change-text {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+    .home-content {
+        padding: 0 0.5rem;
     }
 
     .btn-box {
