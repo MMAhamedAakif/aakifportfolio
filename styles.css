@@ -850,24 +850,36 @@ svg {
 
 /* Responsive */
 @media (max-width: 768px) {
-    /* Global typography tweaks */
+    /* Global layout */
     section {
         padding: 70px 6%;
     }
 
     .home {
         grid-template-columns: 1fr;
-        grid-gap: 2rem;
+        grid-gap: 2.5rem;
+    }
+
+    .home-content {
+        text-align: center;
+        align-items: center;
+    }
+
+    .info-box {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .home-image {
         order: -1;
         top: 0;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .social-icons {
         margin-top: 2.5rem;
+        width: 100%;
+        justify-content: space-around;
     }
 
     .about {
@@ -879,27 +891,37 @@ svg {
         grid-template-columns: 1fr;
     }
 
-    .main-text h2 {
-        font-size: 2rem;
+    .section-services {
+        max-width: 100%;
     }
 
     .portfolio-gallery {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 25px;
     }
 
-    .section-services {
-        max-width: 100%;
+    .main-text h2 {
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 576px) {
     header {
         padding: 15px 6%;
+        flex-wrap: wrap;
+        gap: 0.5rem;
     }
 
     .name .logo {
         font-size: 24px;
+    }
+
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .change-text {
+        font-size: 1.2rem;
     }
 
     .btn-box {
@@ -913,17 +935,26 @@ svg {
         width: 100%;
     }
 
-    .social-icons {
-        width: 100%;
-        justify-content: space-around;
+    .about {
+        padding-top: 40px;
     }
 
-    .portfolio .main-text h2 {
+    .portfolio .main-text h2,
+    .contactme .main-text h2 {
         font-size: 1.8rem;
     }
 
     .port-image img {
         height: 180px;
+    }
+
+    .contactme form {
+        margin: 1rem 1rem 2.5rem 1rem;
+        padding: 1.5rem 1.25rem 1.25rem 1.25rem;
+    }
+
+    .footer {
+        padding: 20px 6%;
     }
 }
 
