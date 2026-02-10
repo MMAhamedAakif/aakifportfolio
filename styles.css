@@ -497,6 +497,11 @@ svg {
     color: var(--hover-color);
 }
 
+/* Reduce gap between Our Services heading and Spline */
+.services .main-text {
+    margin-bottom: 0.75rem;
+}
+
 .main-text h2 {
     font-weight: 700;
     font-size: var(--normal-font);
@@ -724,6 +729,11 @@ svg {
     width: 100%;
 }
 
+.portfolio .container {
+    max-width: 1300px; /* allow projects to span wider on large screens */
+    margin: 0 auto 20px;
+}
+
 .portfolio .main-text span {
     display: block;
     color: #aaa;
@@ -765,9 +775,10 @@ svg {
 
 .portfolio-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 40px;
     justify-content: center;
+    align-items: stretch;
 }
 .light {
     display: none;
@@ -783,6 +794,9 @@ svg {
     border: 2px solid transparent;
     box-shadow: 0 0 10px rgba(0, 255, 242, 0.2);
     transition: 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .port-box:hover {
@@ -799,6 +813,7 @@ svg {
 
 .port-content {
     padding: 20px;
+    flex: 1;
 }
 
 .port-content h3 {
@@ -835,12 +850,80 @@ svg {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* Global typography tweaks */
+    section {
+        padding: 70px 6%;
+    }
+
+    .home {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+    }
+
+    .home-image {
+        order: -1;
+        top: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .social-icons {
+        margin-top: 2.5rem;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skill-main {
+        grid-template-columns: 1fr;
+    }
+
     .main-text h2 {
         font-size: 2rem;
     }
 
     .portfolio-gallery {
+        grid-template-columns: 1fr;
         gap: 25px;
+    }
+
+    .section-services {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 15px 6%;
+    }
+
+    .name .logo {
+        font-size: 24px;
+    }
+
+    .btn-box {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 0.75rem;
+    }
+
+    .btn-box a.btn {
+        width: 100%;
+    }
+
+    .social-icons {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .portfolio .main-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .port-image img {
+        height: 180px;
     }
 }
 
