@@ -724,7 +724,7 @@ svg {
     width: 100%;
 }
 
-.main-text span {
+.portfolio .main-text span {
     display: block;
     color: #aaa;
     font-size: 1rem;
@@ -732,20 +732,20 @@ svg {
     letter-spacing: 2px;
 }
 
-.main-text h2 {
+.portfolio .main-text h2 {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--hover-color);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
-.container {
+.portfolio .container {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
-.fillter-buttons {
-    margin-bottom: 50px;
+.portfolio .fillter-buttons {
+    margin-bottom: 20px;
 }
 
 .fillter-buttons .btn {
@@ -1085,8 +1085,9 @@ svg {
 /* Spline viewer wrapper to hide bottom branding badge */
 .spline-wrapper {
     width: 100%;
+
     max-width: 900px;
-    height: 260px;
+    height: 100px;
     margin: 0 auto 0;
     overflow: hidden;
     border-radius: 20px;
@@ -1094,5 +1095,5 @@ svg {
 
 .spline-wrapper spline-viewer {
     width: 100%;
-    height: 320px; /* slightly taller so bottom badge is clipped */
+    height: 100px; /* slightly taller so bottom badge is clipped */
 }
