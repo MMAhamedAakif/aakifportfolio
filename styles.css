@@ -979,6 +979,40 @@ svg {
         padding: 0 0.5rem;
     }
 
+
+@media (max-width: 400px) {
+    section {
+        padding: 60px 5%;
+    }
+
+    .name .logo {
+        font-size: 22px;
+    }
+
+    .home-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .change-text {
+        font-size: 0.95rem;
+    }
+
+    .info-box {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .btn-box {
+        width: 100%;
+    }
+
+    .social-icons {
+        width: 100%;
+    }
+}
     .btn-box {
         flex-direction: column;
         width: 100%;
