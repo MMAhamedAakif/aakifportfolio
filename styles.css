@@ -160,7 +160,7 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    grid-gap: 4em;
+    grid-gap: 6em;
 }
 
 .home-content {
@@ -905,7 +905,7 @@ svg {
 
     .home {
         grid-template-columns: 1fr;
-        grid-gap: 2.5rem;
+        grid-gap: 3.5rem;
     }
 
     .home-content {
