@@ -63,3 +63,24 @@ circle.forEach(elem => {
     pointsMarked[i].classList.add('marked');
   }
 });
+
+// Mobile sidebar navigation toggle //////////////////////////////////////
+const menuIcon = document.getElementById('menu-icon');
+const navList = document.querySelector('.navlist');
+
+if (menuIcon && navList) {
+    menuIcon.addEventListener('click', () => {
+        navList.classList.toggle('show');
+        menuIcon.classList.toggle('bx-menu');
+        menuIcon.classList.toggle('bx-x');
+    });
+
+    // Close nav when a link is clicked (mobile UX)
+    navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('show');
+            menuIcon.classList.add('bx-menu');
+            menuIcon.classList.remove('bx-x');
+        });
+    });
+}

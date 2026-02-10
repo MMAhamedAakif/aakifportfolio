@@ -103,6 +103,43 @@ span {
 
 }
 
+/* Mobile sidebar navigation */
+@media (max-width: 768px) {
+    .navlist {
+        position: fixed;
+        top: 0;
+        right: -260px;
+        width: 240px;
+        height: 100vh;
+        background: #050017;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.6);
+        flex-direction: column;
+        padding-top: 80px;
+        padding-left: 30px;
+        gap: 1rem;
+        transition: right 0.35s ease;
+        z-index: 998;
+    }
+
+    .navlist li {
+        list-style: none;
+    }
+
+    .navlist a {
+        padding: 0;
+        font-size: 1rem;
+    }
+
+    .navlist.show {
+        right: 0;
+    }
+
+    #menu-icon {
+        display: block;
+        padding: 6px 8px;
+    }
+}
+
 /* HOME SCREEN ///////////////////////////////////////////// */
 
 section {
@@ -1201,13 +1238,35 @@ svg {
     width: 100%;
 
     max-width: 900px;
-    height: 100px;
-    margin: 0 auto 0;
+    height: 220px;
+    margin: 10px auto 0;
     overflow: hidden;
     border-radius: 20px;
 }
 
 .spline-wrapper spline-viewer {
     width: 100%;
-    height: 100px; /* slightly taller so bottom badge is clipped */
+    height: 260px; /* taller so model is bigger while badge stays clipped */
+}
+
+@media (max-width: 768px) {
+    .spline-wrapper {
+        max-width: 100%;
+        height: 260px;
+    }
+
+    .spline-wrapper spline-viewer {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .spline-wrapper {
+        height: 280px;
+        margin-top: 5px;
+    }
+
+    .spline-wrapper spline-viewer {
+        height: 330px;
+    }
 }
