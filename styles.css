@@ -1116,7 +1116,7 @@ svg {
 
     .contactme form input::placeholder,
     .contactme form textarea::placeholder {
-           color: var(--bg-color);
+        color: #bdbdbd;
         opacity: 1;
     }
 
