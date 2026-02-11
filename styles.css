@@ -1114,6 +1114,12 @@ svg {
     background: #23283a;
 }
 
+    .contactme form input::placeholder,
+    .contactme form textarea::placeholder {
+        color: #bdbdbd;
+        opacity: 1;
+    }
+
 /* Contact form button styled like other .btn buttons */
 .contactme .btn {
     display: inline-flex;
