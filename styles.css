@@ -77,7 +77,7 @@
 }
 
 body {
-    font-family: "Poppins", sams-serif;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color)
 }
@@ -1164,7 +1164,7 @@ svg {
 
     .contactme form input::placeholder,
     .contactme form textarea::placeholder {
-        color: ;
+        color:#12f7ff ;
         opacity: 1;
     }
 
