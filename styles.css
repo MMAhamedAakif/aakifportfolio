@@ -359,8 +359,9 @@ a.btn:nth-child(2)::before {
     margin-top: 8rem;
     display: flex;
     justify-content: space-between;
-    width: 220px;
+    width: 300px;
     height: 40px;
+    padding-right: 15px;
 }
 
 .social-icons a {
