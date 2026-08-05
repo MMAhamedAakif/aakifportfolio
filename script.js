@@ -85,6 +85,37 @@ if (menuIcon && navList) {
     });
 }
 
+// Force-download handler for CV links (fetch + blob -> download)
+async function fetchAndDownload(url, filename) {
+    try {
+        const res = await fetch(url, {cache: 'no-store'});
+        if (!res.ok) throw new Error('Network response was not ok');
+        const blob = await res.blob();
+        const blobUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = filename || 'resume.pdf';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+    } catch (err) {
+        console.error('Download failed', err);
+        // fallback: navigate to file (browser default behavior)
+        window.location.href = url;
+    }
+}
+
+// Attach handler to all links with `.js-download-cv`
+document.querySelectorAll('.js-download-cv').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = link.getAttribute('href');
+        const filename = link.dataset.filename || link.getAttribute('download') || 'resume.pdf';
+        fetchAndDownload(url, filename);
+    });
+});
+
 // Contact form popup message
 const contactForm = document.querySelector('.contactme form');
 if (contactForm) {
