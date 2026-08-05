@@ -88,7 +88,13 @@ header {
     justify-content: space-between;
     width: 100%;
     padding: 20px 10%;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-color);
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
 .name {
@@ -117,6 +123,16 @@ span {
 
 .navlist {
     display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap; /* keep items on one line */
+    margin-left: auto; /* push nav to the right */
+    white-space: nowrap;
+}
+
+.navlist li {
+    display: inline-flex;
+    align-items: center;
 }
 
 .navlist a {
@@ -1394,57 +1410,30 @@ svg {
 }
 
 /* Fixed Download CV button shown at top-right on larger screens */
-.download-cv-fixed {
-    position: fixed;
-    top: 16px;
-    /* align with header padding (header uses 10% horizontal padding) */
-    right: calc(10% + 8px);
-    z-index: 1001;
+.nav-download a.btn {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 16px;
-    height: auto;
-    width: auto;
+    align-items: last baseline;
+    justify-content:space-around;
+    padding: 8px 14px;
+    height: 20;
     background: var(--hover-color);
     color: var(--bg-color);
-    border-radius: 8px;
-    font-size: 0.95rem;
+    border-radius: 10px;
     font-weight: 700;
     box-shadow: var(--neon-box-shodow);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.download-cv-fixed:hover {
-    transform: translateY(-2px);
+
+/* Ensure header doesn't cover content */
+main, section, .home {
+    padding-top: 90px; /* header height + gap */
 }
 
 @media (max-width: 768px) {
-    .download-cv-fixed {
-        display: none;
-    }
-}
-
-/* Medium screens fallback: avoid large calc() overlap */
-@media (max-width: 1200px) {
-    .download-cv-fixed {
-        right: 24px;
-    }
-}
-
-/* Mobile nav: show a Download CV link inside the mobile nav list */
-.navlist .download-mobile-link {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .navlist .download-mobile-link {
-        display: block;
-        margin-top: 1rem;
-    }
-    .navlist .download-mobile-link a {
+    .nav-download a.btn {
+        background: transparent;
         color: var(--hover-color);
-        font-weight: 700;
-        padding: 8px 0;
-        display: inline-block;
+        box-shadow: none;
+        padding: 0;
+        height: auto;
     }
 }
