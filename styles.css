@@ -1392,3 +1392,33 @@ svg {
         height: 330px;
     }
 }
+
+/* Fixed Download CV button shown at top-right on larger screens */
+.download-cv-fixed {
+    position: fixed;
+    top: 18px;
+    right: 10%;
+    z-index: 1001;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    height: auto;
+    width: auto;
+    background: var(--hover-color);
+    color: var(--bg-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    box-shadow: var(--neon-box-shodow);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.download-cv-fixed:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .download-cv-fixed {
+        display: none;
+    }
+}
