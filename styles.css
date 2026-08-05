@@ -57,6 +57,12 @@
     text-decoration: none;
 }
 
+/* Prevent horizontal scrolling on small screens */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 :root {
     --text-color: #f5f5f5;
     --hover-color: #12f7ff;
@@ -505,6 +511,17 @@ svg {
     height: 600px;
     z-index: 1;
     overflow: visible;
+}
+
+/* Constrain large decorative shapes on small screens to avoid overflow */
+@media (max-width: 768px) {
+    .lequid-shape,
+    .lequid-shape1 {
+        width: min(80vw, 420px);
+        height: auto;
+        top: 12%;
+    }
+    .home-image { top: 0; }
 }
 
 /* SVG blob */
