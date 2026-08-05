@@ -93,3 +93,47 @@ if (contactForm) {
         alert('Your message has been sent!');
     });
 }
+
+// Click-to-copy email ////////////////////////////////////////
+const emailElem = document.getElementById('email');
+if (emailElem) {
+    emailElem.addEventListener('click', async (e) => {
+        const email = emailElem.dataset.email || emailElem.textContent.trim();
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(email);
+            } else {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = email;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.focus();
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+            }
+            // show tooltip
+            let tip = emailElem.querySelector('.copy-tooltip');
+            if (!tip) {
+                tip = document.createElement('span');
+                tip.className = 'copy-tooltip';
+                tip.textContent = 'Copied!';
+                emailElem.appendChild(tip);
+                // small delay to allow transition when adding class
+                requestAnimationFrame(() => tip.classList.add('show'));
+            } else {
+                tip.classList.remove('show');
+                // reflow then show
+                void tip.offsetWidth;
+                tip.classList.add('show');
+            }
+            setTimeout(() => {
+                tip.classList.remove('show');
+            }, 1400);
+        } catch (err) {
+            console.error('Copy failed', err);
+        }
+    });
+}
