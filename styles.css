@@ -88,7 +88,7 @@ header {
     justify-content: space-between;
     width: 100%;
     padding: 20px 10%;
-
+    position: relative;
 }
 
 .name {
@@ -1396,8 +1396,9 @@ svg {
 /* Fixed Download CV button shown at top-right on larger screens */
 .download-cv-fixed {
     position: fixed;
-    top: 18px;
-    right: 10%;
+    top: 16px;
+    /* align with header padding (header uses 10% horizontal padding) */
+    right: calc(10% + 8px);
     z-index: 1001;
     display: inline-flex;
     align-items: center;
@@ -1420,5 +1421,30 @@ svg {
 @media (max-width: 768px) {
     .download-cv-fixed {
         display: none;
+    }
+}
+
+/* Medium screens fallback: avoid large calc() overlap */
+@media (max-width: 1200px) {
+    .download-cv-fixed {
+        right: 24px;
+    }
+}
+
+/* Mobile nav: show a Download CV link inside the mobile nav list */
+.navlist .download-mobile-link {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navlist .download-mobile-link {
+        display: block;
+        margin-top: 1rem;
+    }
+    .navlist .download-mobile-link a {
+        color: var(--hover-color);
+        font-weight: 700;
+        padding: 8px 0;
+        display: inline-block;
     }
 }
