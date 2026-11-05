@@ -98,9 +98,12 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background: var(--bg-color);
+    background: rgba(11, 2, 25, 0.62);
+    border-bottom: 1px solid rgba(18, 247, 255, 0.2);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .name {
@@ -188,7 +191,10 @@ span {
         right: -260px;
         width: 240px;
         height: 100vh;
-        background: #050017;
+        background: rgba(5, 0, 23, 0.72);
+        border-left: 1px solid rgba(18, 247, 255, 0.2);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
         box-shadow: -4px 0 20px rgba(0, 0, 0, 0.6);
         flex-direction: column;
         padding-top: 80px;
