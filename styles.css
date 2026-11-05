@@ -125,7 +125,7 @@ header {
 }
 
 span {
-    color: var(--hover-color);
+    color: var(--text-color);
 
 
 }
@@ -568,7 +568,7 @@ svg {
 }
 
 .about-content h2 {
-    color: var(--hover-color);
+    color: var(--text-color);
     font-weight: 700;
     font-size: var(--normal-font);
 }
@@ -631,7 +631,7 @@ svg {
     width: 100%;
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--hover-color);
+    color: var(--text-color);
 }
 
 /* Reduce gap between Our Services heading and Spline */
@@ -954,7 +954,7 @@ svg {
 }
 
 .port-content h3 {
-    color: var(--hover-color);
+    color: var(--text-color);
     font-size: 1.4rem;
     margin-bottom: 15px;
 }
