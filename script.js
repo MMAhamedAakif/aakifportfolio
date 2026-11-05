@@ -116,6 +116,15 @@ document.querySelectorAll('.js-download-cv').forEach(link => {
     });
 });
 
+// Follow the pointer around portfolio card borders
+document.querySelectorAll('.port-box').forEach(card => {
+    card.addEventListener('pointermove', (event) => {
+        const bounds = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', `${event.clientX - bounds.left}px`);
+        card.style.setProperty('--mouse-y', `${event.clientY - bounds.top}px`);
+    });
+});
+
 // Contact form popup message
 const contactForm = document.querySelector('.contactme form');
 if (contactForm) {
