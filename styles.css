@@ -677,7 +677,7 @@ svg {
 .port-box:hover {
     border-color: var(--hover-color);
     box-shadow: var(--neon-glow);
-    transform: translateY(-10px);
+    /* transform: translateY(-10px); */
 }
 
 .service-box:hover {
@@ -930,7 +930,8 @@ svg {
     border-radius: 10px;
     overflow: hidden;
     border: 2px solid rgba(18, 247, 255, 0.18);
-    transition: border-color 0.25s ease;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E%3Ccircle cx='9' cy='9' r='6' fill='%2312f7ff'/%3E%3C/svg%3E") 9 9, pointer;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -941,7 +942,7 @@ svg {
     position: absolute;
     inset: -2px;
     background: radial-gradient(
-        110px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        180px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
         var(--hover-color),
         transparent 70%
     );
@@ -967,7 +968,10 @@ svg {
 }
 
 .port-box:hover {
-    border-color: rgba(18, 247, 255, 0.35);
+    border-color: rgba(18, 247, 255, 0.9);
+    box-shadow: 0 0 10px rgba(18, 247, 255, 0.9),
+        0 0 26px rgba(18, 247, 255, 0.65),
+        0 0 48px rgba(18, 247, 255, 0.35);
 }
 
 .port-box:hover::before {
@@ -987,12 +991,13 @@ svg {
 }
 
 .port-box:hover .port-image img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .port-content {
     padding: 20px;
     flex: 1;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .port-content h3 {
@@ -1006,6 +1011,16 @@ svg {
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+
+.port-box:hover .port-content {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.port-box:hover .port-content h3,
+.port-box:hover .port-content p,
+.port-box:hover .port-content a {
+    color: #fff;
 }
 
 .port-content a {
