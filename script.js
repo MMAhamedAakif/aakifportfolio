@@ -119,14 +119,68 @@ const showWord = (index) => words.forEach((word, i) => word.classList.toggle('cu
 if (words.length) {
     showWord(0);
     if (!reducedMotion) window.setInterval(() => {
+        if (loader && !loader.classList.contains('is-hidden')) return;
         wordIndex = (wordIndex + 1) % words.length;
         showWord(wordIndex);
-    }, 2600);
+        scrambleText(words[wordIndex]);
+    }, 4000); // text timing for the words to change every 4 seconds
 }
 
 document.querySelectorAll('.circle').forEach((circle) => {
     circle.style.setProperty('--percent', circle.dataset.percent || '0');
 });
+
+const scrambleCharacters = '01#$%@&!?~01#$%@&!?~';
+const scrambleTargets = [
+    ...document.querySelectorAll('[data-scramble], .eyebrow, .project-kicker, .info-about1')
+].filter((element, index, elements) => (
+    elements.indexOf(element) === index && !element.closest('.home')
+));
+const scrambleText = (element) => {
+    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    let node;
+    while ((node = walker.nextNode())) {
+        if (node.nodeValue.trim()) nodes.push({ node, original: node.nodeValue });
+    }
+    if (!nodes.length) return;
+    element.classList.add('scramble-active');
+    const started = performance.now();
+    const duration = 1600;
+    const timer = window.setInterval(() => {
+        const progress = Math.min((performance.now() - started) / duration, 1);
+        nodes.forEach(({ node, original }) => {
+            const revealCount = Math.floor(progress * (original.length + 2));
+            node.nodeValue = [...original].map((character, index) => {
+                if (/\s/.test(character)) return character;
+                if (index < revealCount) return character;
+                return scrambleCharacters[Math.floor(Math.random() * scrambleCharacters.length)];
+            }).join('');
+        });
+        if (progress === 1) {
+            window.clearInterval(timer);
+            nodes.forEach(({ node, original }) => { node.nodeValue = original; });
+            element.classList.remove('scramble-active');
+        }
+    }, 90);
+};
+const scrambleObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        if (!reducedMotion) scrambleText(entry.target);
+        observer.unobserve(entry.target);
+    });
+}, { threshold: .35 });
+scrambleTargets.forEach((element) => scrambleObserver.observe(element));
+
+if (!reducedMotion) {
+    const heroHeadline = document.querySelector('.home h1[data-scramble]');
+    const loaderDelay = loader ? 10050 : 0;
+    window.setTimeout(() => {
+        if (heroHeadline) scrambleText(heroHeadline);
+        if (words[0]) scrambleText(words[0]);
+    }, loaderDelay);
+}
 
 const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {

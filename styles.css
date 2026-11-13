@@ -10,6 +10,7 @@
     --text: #f8f5ff;
     --muted: #b8aec9;
     --border: #39204f;
+    --scramble-color: #a855f7;
     --header-height: 76px;
     --shadow: 0 24px 70px rgba(0, 0, 0, .35);
 }
@@ -510,6 +511,7 @@ details p { min-height: 0; padding-top: .6rem; }
 .identity-name.is-revealed { animation: identity-glitch .6s steps(2) both; opacity: 1; }
 .identity-status { color: #8db965; font: .63rem "DM Mono", monospace; letter-spacing: .08em; }
 .identity-status i { background: #8db965; border-radius: 50%; box-shadow: 0 0 10px rgba(141, 185, 101, .8); display: inline-block; height: .4rem; margin-right: .25rem; width: .4rem; }
+.scramble-active { color: var(--scramble-color); text-shadow: 0 0 14px color-mix(in srgb, var(--scramble-color) 55%, transparent); }
 .text-reveal { display: inline; }.text-reveal .text-char { display: inline-block; opacity: 0; transform: translateY(.5em); }
 .text-reveal.is-visible .text-char { animation: char-in .45s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(var(--char-index) * 22ms); }
 .text-reveal.is-visible { text-shadow: 0 0 18px rgba(168, 85, 247, .12); }
@@ -523,6 +525,7 @@ details p { min-height: 0; padding-top: .6rem; }
 body.light-theme .cyber-atmosphere span { color: rgba(124, 58, 237, .12); }
 body.light-theme .identity-name { text-shadow: none; }
 body.light-theme .identity-status { color: #4f7728; }
+body.light-theme { --scramble-color: #7c3aed; }
 @media (max-width: 600px) {
     .terminal-body { min-height: 250px; padding: 1.1rem; }.terminal-log, .terminal-prompt { font-size: .64rem; }.cyber-atmosphere span { display: none; }
     .identity-name { letter-spacing: .12em; }.identity-status { font-size: .58rem; }
