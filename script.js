@@ -123,7 +123,7 @@ if (words.length) {
         wordIndex = (wordIndex + 1) % words.length;
         showWord(wordIndex);
         scrambleText(words[wordIndex]);
-    }, 6000); // keep each role visible longer while preserving scramble speed
+    }, 3000); // rotate roles every 3 seconds
 }
 
 document.querySelectorAll('.circle').forEach((circle) => {
@@ -146,7 +146,7 @@ const scrambleText = (element) => {
     if (!nodes.length) return;
     element.classList.add('scramble-active');
     const started = performance.now();
-    const duration = 3200;
+    const duration = 2400;
     const timer = window.setInterval(() => {
         const progress = Math.min((performance.now() - started) / duration, 1);
         nodes.forEach(({ node, original }) => {
@@ -169,7 +169,7 @@ if (securityStatus && !reducedMotion) {
     window.setInterval(() => {
         if (loader && !loader.classList.contains('is-hidden')) return;
         scrambleText(securityStatus);
-    }, 5000);
+    }, 6000);
 }
 const scrambleObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
