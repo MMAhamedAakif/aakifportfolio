@@ -1,179 +1,255 @@
-let word = document.querySelectorAll(".word");
-word.forEach((word) => {
-    let letters = word.textContent.split("");
-    word.textContent="";
-    letters.forEach((letter)=>{
-        let span = document.createElement("span");
-        span.textContent=letter;
-        span.className = "letter";
-        word.append(span);
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const body = document.body;
+body.classList.add('is-loading');
+const header = document.querySelector('header');
+const progress = document.querySelector('.scroll-progress');
+const backToTop = document.querySelector('.back-to-top');
+const timeline = document.querySelector('[data-timeline]');
+const timelineItems = timeline ? [...timeline.querySelectorAll('[data-timeline-item]')] : [];
+const loader = document.querySelector('.loader');
+const terminalLog = document.querySelector('[data-terminal-log]');
+const loaderProgress = document.querySelector('[data-loader-progress]');
+const loaderPercent = document.querySelector('[data-loader-percent]');
+const loaderStatus = document.querySelector('[data-loader-status]');
+
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+const updateTimeline = () => {
+    if (!timeline) return;
+    const bounds = timeline.getBoundingClientRect();
+    const trigger = window.innerHeight * .68;
+    const progressValue = clamp(((trigger - bounds.top) / bounds.height) * 100, 0, 100);
+    timeline.style.setProperty('--timeline-progress', `${progressValue}%`);
+    let activeItem = null;
+    timelineItems.forEach((item) => {
+        const itemTop = item.getBoundingClientRect().top;
+        const complete = itemTop < trigger;
+        item.classList.toggle('is-complete', complete);
+        if (complete && itemTop > window.innerHeight * .25) activeItem = item;
     });
-});
-
-let currentWordIndex =0;
-let maxWordIndex = word.length-1;
-word[currentWordIndex].style.opacity ="1";
-
-let changeText = ()=>{
-    let currentWord = word[currentWordIndex];
-    let nextWord = currentWordIndex ===  maxWordIndex ? word[0] : word[currentWordIndex+ 1];
-
-    Array.from(currentWord.children).forEach((letter, i)=>{
-        setTimeout(() => {
-            letter.className = "letter out";
-
-        }, i* 80);
-    });
-
-    Array.from(nextWord.children).forEach((letter,i)=>{
-        letter.className = "letter behind";
-        setTimeout(()=>{
-            letter.className="letter in";
-        } ,340+i *80);
-
-    });
-    setTimeout(() => {
-        nextWord.style.opacity = "1";
-    }, 340 + nextWord.children.length * 80);
-
-    currentWordIndex = currentWordIndex === maxWordIndex ? 0 : currentWordIndex +1;
+    timelineItems.forEach((item) => item.classList.toggle('is-active', item === activeItem));
 };
 
-changeText()
-setInterval(changeText, 3000)
+const bootMessages = [
+    ['INITIALIZING SYSTEM...', false],
+    ['LOADING SECURITY MODULES...', false],
+    ['ESTABLISHING SECURE CONNECTION...', false],
+    ['SCANNING DIGITAL ENVIRONMENT...', false],
+    ['NETWORK INTERFACES INITIALIZED', false],
+    ['ACCESS GRANTED', true]
+];
+const revealIdentity = () => document.querySelector('[data-identity-name]')?.classList.add('is-revealed');
+const finishTerminalBoot = () => {
+    loader?.classList.add('is-hidden');
+    body.classList.remove('is-loading');
+    revealIdentity();
+};
+const startTerminalBoot = () => {
+    if (!loader) {
+        revealIdentity();
+        return;
+    }
+    if (reducedMotion) {
+        bootMessages.forEach(([message, success]) => {
+            const line = document.createElement('span');
+            line.className = `terminal-line${success ? ' is-success' : ''}`;
+            line.textContent = message;
+            terminalLog?.appendChild(line);
+        });
+        if (loaderProgress) loaderProgress.style.transform = 'scaleX(1)';
+        if (loaderPercent) loaderPercent.textContent = '100%';
+        finishTerminalBoot();
+        return;
+    }
+    let messageIndex = 0;
+    const messageTimer = window.setInterval(() => {
+        const [message, success] = bootMessages[messageIndex];
+        const line = document.createElement('span');
+        line.className = `terminal-line${success ? ' is-success' : ''}`;
+        line.textContent = message;
+        terminalLog?.appendChild(line);
+        if (loaderStatus) loaderStatus.textContent = success ? 'ACCESS GRANTED' : message.replace('...', '');
+        messageIndex += 1;
+        if (messageIndex === bootMessages.length) window.clearInterval(messageTimer);
+    },850);
+    const started = performance.now();
+    const progressTimer = window.setInterval(() => {
+        const percentage = Math.min(Math.round(((performance.now() - started) / 7000) * 100), 100);
+        if (loaderProgress) loaderProgress.style.transform = `scaleX(${percentage / 100})`;
+        if (loaderPercent) loaderPercent.textContent = `${percentage}%`;
+        if (percentage === 100) window.clearInterval(progressTimer);
+    }, 24);
+    window.setTimeout(() => {
+        finishTerminalBoot();
+    }, 6000);
+};
+startTerminalBoot();
 
-// circle skills ////////////////////////////////////////
-const circle = document.querySelectorAll('.circle');
+const updateScrollState = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.transform = `scaleX(${scrollable > 0 ? window.scrollY / scrollable : 0})`;
+    header.classList.toggle('scrolled', window.scrollY > 24);
+    backToTop.classList.toggle('visible', window.scrollY > 500);
+    updateTimeline();
+};
+window.addEventListener('scroll', updateScrollState, { passive: true });
+updateScrollState();
 
-circle.forEach(elem => {
-  const dots = elem.getAttribute("data-dots");
-  const marked = elem.getAttribute("data-percent");
-  const percent = Math.floor(dots * marked / 100);
-  const rotate = 360 / dots;
-  let points = "";
-
-  for (let i = 0; i < dots; i++) {
-    points += `<div class="points" style="--i:${i}; --rot:${rotate}deg"></div>`;
-  }
-
-  elem.innerHTML = points;
-
-  const pointsMarked = elem.querySelectorAll('.points');
-  for (let i = 0; i < percent; i++) {
-    pointsMarked[i].classList.add('marked');
-  }
-});
-
-// Mobile sidebar navigation toggle //////////////////////////////////////
 const menuIcon = document.getElementById('menu-icon');
 const navList = document.querySelector('.navlist');
-
 if (menuIcon && navList) {
+    const closeMenu = () => {
+        navList.classList.remove('show');
+        menuIcon.classList.replace('bx-x', 'bx-menu');
+        menuIcon.setAttribute('aria-expanded', 'false');
+        menuIcon.setAttribute('aria-label', 'Open navigation menu');
+    };
     menuIcon.addEventListener('click', () => {
-        navList.classList.toggle('show');
-        menuIcon.classList.toggle('bx-menu');
-        menuIcon.classList.toggle('bx-x');
+        const isOpen = navList.classList.toggle('show');
+        menuIcon.classList.toggle('bx-menu', !isOpen);
+        menuIcon.classList.toggle('bx-x', isOpen);
+        menuIcon.setAttribute('aria-expanded', String(isOpen));
+        menuIcon.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
     });
+    navList.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+}
 
-    // Close nav when a link is clicked (mobile UX)
-    navList.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navList.classList.remove('show');
-            menuIcon.classList.add('bx-menu');
-            menuIcon.classList.remove('bx-x');
+const words = [...document.querySelectorAll('.word')];
+let wordIndex = 0;
+const showWord = (index) => words.forEach((word, i) => word.classList.toggle('current', i === index));
+if (words.length) {
+    showWord(0);
+    if (!reducedMotion) window.setInterval(() => {
+        wordIndex = (wordIndex + 1) % words.length;
+        showWord(wordIndex);
+    }, 2600);
+}
+
+document.querySelectorAll('.circle').forEach((circle) => {
+    circle.style.setProperty('--percent', circle.dataset.percent || '0');
+});
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: .12 });
+document.querySelectorAll('.reveal, .stagger').forEach((element) => revealObserver.observe(element));
+updateTimeline();
+
+const textRevealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+    });
+}, { threshold: .35 });
+document.querySelectorAll('[data-animate-text]').forEach((element) => {
+    const text = element.textContent.trim();
+    element.textContent = '';
+    element.classList.add('text-reveal');
+    [...text].forEach((character, index) => {
+        const span = document.createElement('span');
+        span.className = 'text-char';
+        span.style.setProperty('--char-index', index);
+        span.textContent = character === ' ' ? '\u00a0' : character;
+        element.appendChild(span);
+    });
+    if (reducedMotion) element.classList.add('is-visible');
+    else textRevealObserver.observe(element);
+});
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        document.querySelectorAll('.navlist a').forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
         });
+    });
+}, { rootMargin: '-35% 0px -55% 0px' });
+document.querySelectorAll('main section[id]').forEach((section) => sectionObserver.observe(section));
+
+document.querySelectorAll('[data-filter]').forEach((button) => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('[data-filter]').forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        document.querySelectorAll('.port-box[data-category]').forEach((card) => {
+            card.classList.toggle('is-hidden', filter !== 'all' && card.dataset.category !== filter);
+        });
+    });
+});
+
+if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('.port-box').forEach((card) => {
+        card.addEventListener('pointermove', (event) => {
+            const bounds = card.getBoundingClientRect();
+            const x = (event.clientX - bounds.left) / bounds.width - .5;
+            const y = (event.clientY - bounds.top) / bounds.height - .5;
+            card.style.transform = `perspective(900px) rotateX(${y * -4}deg) rotateY(${x * 4}deg) translateY(-6px)`;
+        });
+        card.addEventListener('pointerleave', () => { card.style.transform = ''; });
     });
 }
 
-// Force-download handler for CV links (fetch + blob -> download)
+const themeToggle = document.querySelector('.theme-toggle');
+const storedTheme = localStorage.getItem('portfolio-theme');
+if (storedTheme === 'light') body.classList.add('light-theme');
+const updateThemeLabel = () => {
+    const isLight = body.classList.contains('light-theme');
+    themeToggle?.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+    if (themeToggle) themeToggle.innerHTML = `<i class='bx ${isLight ? 'bx-moon' : 'bx-sun'}'></i>`;
+};
+updateThemeLabel();
+themeToggle?.addEventListener('click', () => {
+    body.classList.add('theme-transition');
+    body.classList.toggle('light-theme');
+    localStorage.setItem('portfolio-theme', body.classList.contains('light-theme') ? 'light' : 'dark');
+    updateThemeLabel();
+    window.setTimeout(() => body.classList.remove('theme-transition'), 400);
+});
+
+const contactForm = document.querySelector('.contactme form');
+contactForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const status = contactForm.querySelector('.form-status');
+    if (status) status.textContent = 'The form is ready to connect to a backend. No message was sent.';
+});
+
+const emailElement = document.getElementById('email');
+emailElement?.addEventListener('click', async () => {
+    const email = emailElement.dataset.email || emailElement.textContent.trim();
+    try {
+        await navigator.clipboard.writeText(email);
+        emailElement.textContent = 'Copied to clipboard';
+        window.setTimeout(() => { emailElement.textContent = email; }, 1400);
+    } catch (error) {
+        console.error('Copy failed', error);
+    }
+});
+
 async function fetchAndDownload(url, filename) {
     try {
-        const res = await fetch(url, {cache: 'no-store'});
-        if (!res.ok) throw new Error('Network response was not ok');
-        const blob = await res.blob();
-        const blobUrl = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = blobUrl;
-        a.download = filename || 'resume.pdf';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
-    } catch (err) {
-        console.error('Download failed', err);
-        // fallback: navigate to file (browser default behavior)
+        const response = await fetch(url, { cache: 'no-store' });
+        if (!response.ok) throw new Error('Network response was not ok');
+        const blobUrl = URL.createObjectURL(await response.blob());
+        const link = document.createElement('a');
+        link.href = blobUrl;
+        link.download = filename || 'resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        window.setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+    } catch (error) {
+        console.error('Download failed', error);
         window.location.href = url;
     }
 }
-
-// Attach handler to all links with `.js-download-cv`
-document.querySelectorAll('.js-download-cv').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const url = link.getAttribute('href');
-        const filename = link.dataset.filename || link.getAttribute('download') || 'resume.pdf';
-        fetchAndDownload(url, filename);
+document.querySelectorAll('.js-download-cv').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        fetchAndDownload(link.href, link.dataset.filename || link.download);
     });
 });
-
-// Follow the pointer around portfolio card borders
-document.querySelectorAll('.port-box').forEach(card => {
-    card.addEventListener('pointermove', (event) => {
-        const bounds = card.getBoundingClientRect();
-        card.style.setProperty('--mouse-x', `${event.clientX - bounds.left}px`);
-        card.style.setProperty('--mouse-y', `${event.clientY - bounds.top}px`);
-    });
-});
-
-// Contact form popup message
-const contactForm = document.querySelector('.contactme form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Your message has been sent!');
-    });
-}
-
-// Click-to-copy email ////////////////////////////////////////
-const emailElem = document.getElementById('email');
-if (emailElem) {
-    emailElem.addEventListener('click', async (e) => {
-        const email = emailElem.dataset.email || emailElem.textContent.trim();
-        try {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                await navigator.clipboard.writeText(email);
-            } else {
-                // Fallback for older browsers
-                const textarea = document.createElement('textarea');
-                textarea.value = email;
-                textarea.style.position = 'fixed';
-                textarea.style.opacity = '0';
-                document.body.appendChild(textarea);
-                textarea.focus();
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-            }
-            // show tooltip
-            let tip = emailElem.querySelector('.copy-tooltip');
-            if (!tip) {
-                tip = document.createElement('span');
-                tip.className = 'copy-tooltip';
-                tip.textContent = 'Copied!';
-                emailElem.appendChild(tip);
-                // small delay to allow transition when adding class
-                requestAnimationFrame(() => tip.classList.add('show'));
-            } else {
-                tip.classList.remove('show');
-                // reflow then show
-                void tip.offsetWidth;
-                tip.classList.add('show');
-            }
-            setTimeout(() => {
-                tip.classList.remove('show');
-            }, 1400);
-        } catch (err) {
-            console.error('Copy failed', err);
-        }
-    });
-}

@@ -6,12 +6,29 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahamed Aakif Portfolio</title>
+    <meta name="description" content="Ahamed Aakif - Cybersecurity Analyst, SOC Analyst and Information Security Analyst portfolio">
+    <title>Ahamed Aakif | Cybersecurity Analyst</title>
     <link rel="stylesheet" href="styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+    <div class="loader">
+        <div class="loader-noise" aria-hidden="true"></div>
+        <div class="loader-grid" aria-hidden="true"></div>
+        <div class="terminal-loader" role="status" aria-live="polite">
+            <div class="terminal-topbar"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span>secure-shell / aakif-portfolio</span></div>
+            <div class="terminal-body">
+                <p class="terminal-prompt">root@aakif:~$ <span>./initialize_security_environment</span><b class="terminal-cursor">_</b></p>
+                <div class="terminal-log" data-terminal-log></div>
+                <div class="loader-progress"><span data-loader-progress></span></div>
+                <div class="loader-meta"><span data-loader-status>INITIALIZING</span><span data-loader-percent>0%</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="cyber-atmosphere" aria-hidden="true"><span>01001001 01101110 01100110 01101111</span><span>0x7C3A / 0xA855F7</span><span>10110100 01110011</span></div>
     <!-- Header section //////////////////////////////////////////////////////////////// -->
 
     <header>
@@ -26,62 +43,74 @@
         <ul class="navlist">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#journey">Journey</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contactme">Contact</a></li>
-                <li class="nav-download"><a href="resource/M.M.AHAMED AAKIF_CV.pdf" class="btn js-download-cv"
+            <li class="nav-download"><a href="resource/M.M.AHAMED AAKIF_CV.pdf" class="btn js-download-cv"
                     download="M.M.AHAMED_AAKIF_CV.pdf" data-filename="AHAMED_AAKIF_CV.pdf">Download CV</a></li>
         </ul>
 
-        <div id="menu-icon" class="bx bx-menu"></div>
+        <div class="header-actions">
+            <button class="icon-button theme-toggle" type="button" aria-label="Switch to light theme"><i class='bx bx-sun'></i></button>
+            <button id="menu-icon" class="bx bx-menu" type="button" aria-label="Open navigation menu" aria-expanded="false"></button>
+        </div>
     </header>
 
 
     <!-- HOME SCREEN /////////////////////////////////////////////////////////////////-->
 
-    <section class="home" id="home">
+    <main>
+    <section class="home reveal" id="home">
         <div class="home-content">
-            <h1>Hi! I'm Ahamed Aakif
-
-            </h1>
+            <div class="identity-lockup" aria-label="MM. AHAMED AAKIF">
+                <span class="identity-name" data-identity-name data-text="MM. AHAMED AAKIF">MM. AHAMED AAKIF</span>
+                <span class="identity-status"><i></i> SECURITY PROFILE ONLINE</span>
+            </div>
+            <p class="eyebrow">Cybersecurity Analyst · SOC Analyst · Information Security Analyst</p>
+            <h1>Building secure <em>systems</em> and resilient networks.</h1>
             <div class="change-text">
                 <h3>And I'm </h3>
 
                 <h3>
-                    <span class="word">Cybersecurity &nbsp;Enthusiast </span>
-                    <span class="word">App&nbsp; Developer</span>
-                    <span class="word">Fronend &nbsp;Developer</span>
-                    <span class="word">Network&nbsp; Administrator </span>
-                    <span class="word">Network &nbsp;Security&nbsp; Engineer</span>
-                    <span class="word">Network &nbsp;Technician</span>
+                    <span class="word">Cybersecurity Analyst</span>
+                    <span class="word">SOC Analyst</span>
+                    <span class="word">Information Security Analyst</span>
+                    <span class="word">Network Security Practitioner</span>
 
                 </h3>
             </div>
 
-            <p>Passionate and enthusiastic IT student with a strong interest in software development, Flutter
-                application development, web technologies, networking, and cybersecurity.</p>
+            <p>BICT undergraduate specializing in Network Technology at the University of Sri Jayewardenepura,
+                developing practical experience across security operations, network security, Linux systems and
+                software development.</p>
 
             <div class="info-box">
                 <div class="email-info">
                     <h5>Email :</h5>
-                    <span id="email" class="copy-email" data-email="mmahamedaakif@gmail.com">mmahamedaakif@gmail.com</span>
+                    <span id="email" class="copy-email"
+                        data-email="mmahamedaakif@gmail.com">mmahamedaakif@gmail.com</span>
                 </div>
                 <div class="behance-info">
-                    <h5>behance :</h5>
-                    <span> behance.net/Aakif</span>
+                    <h5>Focus :</h5>
+                    <span>Security operations &amp; infrastructure</span>
                 </div>
             </div>
 
             <div class="btn-box">
-                <a href="resource/M.M.AHAMED AAKIF_CV.pdf" class="btn js-download-cv" download="M.M.AHAMED_AAKIF_CV.pdf" data-filename="M.M.AHAMED_AAKIF_CV.pdf">Download CV</a>
-                <a href="#contactme" class="btn">Hire Me Now!</a>
+                <a href="resource/M.M.AHAMED AAKIF_CV.pdf" class="btn js-download-cv" download="M.M.AHAMED_AAKIF_CV.pdf"
+                    data-filename="M.M.AHAMED_AAKIF_CV.pdf">Download CV</a>
+                <a href="#contactme" class="btn">Let's Connect</a>
             </div>
 
             <div class="social-icons">
-                <a href="www.linkedin.com/in/mmahamedaakif" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/MMAhamedAakif" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
-                <a href="https://wa.me/94758719837" target="_blank" rel="noopener noreferrer"><i class='bx bxl-whatsapp'></i></a>
+                <a href="https://www.linkedin.com/in/mmahamedaakif" target="_blank" rel="noopener noreferrer"><i
+                        class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/MMAhamedAakif" target="_blank" rel="noopener noreferrer"><i
+                        class='bx bxl-github'></i></a>
+                <a href="https://wa.me/94758719837" target="_blank" rel="noopener noreferrer"><i
+                        class='bx bxl-whatsapp'></i></a>
                 <a href="#"><i class='bx bxl-facebook'></i></a>
                 <a href="#"><i class='bx bxl-instagram'></i></a>
 
@@ -117,14 +146,12 @@
             </div>
 
         </div>
-
-
     </section>
 
 
 
     <!--   ABOUT SECTION /////////////////////////////////////////////////////////////  -->
-    <section id="about" class="about">
+    <section id="about" class="about reveal">
         <div class="img-about">
             <div class="home-image1">
                 <div class="img-box1">
@@ -148,66 +175,118 @@ M52.3,-17.3C61.2,10.4,57.3,42,39.1,55.7C20.9,69.4,-11.7,65.1,-32.4,49C-53.1,32.9
                 </div>
             </div>
             <div class="info-about1">
-                <span>1+<span>
-                    <p>Years of Experience</p>
+                <span>BICT</span>
+                <p>Undergraduate</p>
 
             </div>
 
-            <div class="info-about2">
-                <span>5+</span>
-                <p>Projects Complete</p>
-            </div>
             <div class="info-about3">
-                <span>20+</span>
-                <p>Happy Clients</p>
+                <span>CCNA</span>
+                <p>Currently pursuing</p>
             </div>
         </div>
         <div class="about-content">
-            <span>
-                Let me intruduce myselt
-            </span>
             <h2>
                 About Me
             </h2>
-            <h3>
-                A story of good
-            </h3>
+            <h3 data-animate-text>Security-minded, systems-focused.</h3>
             <p>
-                I am a junior software developer and enthusiastic IT student with a strong interest in software
-                development, Flutter application development, web technologies, networking, and cybersecurity. Skilled
-                in building responsive and user-friendly applications while continuously improving programming and
-                technical problem-solving abilities. <br> <br>
-
-                Possess hands-on experience with computer hardware, system configuration, troubleshooting, and network
-                fundamentals. Dedicated to learning new technologies, strengthening cybersecurity knowledge, and
-                exploring innovative solutions to real-world technical challenges. A motivated self-learner with
-                excellent adaptability and a strong desire to grow in the fields of software engineering and information
-                technology.
+                I am a BICT undergraduate at the University of Sri Jayewardenepura, specializing in Network
+                Technology and building a career in cybersecurity, security operations and network security.
+                <br><br>
+                My practical learning spans Linux, networking, SIEM monitoring, identity and access management,
+                vulnerability assessment and security tooling. I strengthen that foundation through hands-on labs,
+                enterprise network designs and cybersecurity CTF challenges.
 
             </p>
             <div class="btn-box">
-                <a href="#" class="btn">Read More</a>
+                <a href="#journey" class="btn">Explore my journey</a>
             </div>
         </div>
     </section>
 
+    <section id="journey" class="journey reveal">
+        <div class="section-shell">
+            <div class="main-text">
+                <h2 data-animate-text>My Journey</h2>
+                <p class="section-intro">A progression from network foundations to security operations, practical labs and
+                    a focused path toward SOC and information security work.</p>
+            </div>
+            <div class="timeline" data-timeline>
+                <div class="timeline-progress" aria-hidden="true"><span></span></div>
+                <article class="timeline-item reveal" data-timeline-item>
+                    <span class="timeline-node" aria-hidden="true"></span>
+                    <div class="timeline-card">
+                        <span class="eyebrow">01 / 2024 - 2028</span>
+                        <h3 data-animate-text>Academic Foundation</h3>
+                        <p>BICT Undergraduate at the University of Sri Jayewardenepura.</p>
+                        <strong>Specialization: Network Technology</strong>
+                    </div>
+                </article>
+                <article class="timeline-item reveal" data-timeline-item>
+                    <span class="timeline-node" aria-hidden="true"></span>
+                    <div class="timeline-card">
+                        <span class="eyebrow">02 / Foundation</span>
+                        <h3 data-animate-text>Networking Foundation</h3>
+                        <p>Developing practical knowledge through Cisco Packet Tracer, VLANs, trunking,
+                            inter-VLAN routing, OSPF, troubleshooting and enterprise network design.</p>
+                    </div>
+                </article>
+                <article class="timeline-item reveal" data-timeline-item>
+                    <span class="timeline-node" aria-hidden="true"></span>
+                    <div class="timeline-card">
+                        <span class="eyebrow">03 / Systems</span>
+                        <h3 data-animate-text>Systems &amp; Linux</h3>
+                        <p>Building practical administration skills with Ubuntu Linux, Kali Linux, VirtualBox and
+                            virtualized lab environments.</p>
+                    </div>
+                </article>
+                <article class="timeline-item reveal" data-timeline-item>
+                    <span class="timeline-node" aria-hidden="true"></span>
+                    <div class="timeline-card">
+                        <span class="eyebrow">04 / Security operations</span>
+                        <h3 data-animate-text>Cybersecurity &amp; SOC Practice</h3>
+                        <p>Working with Wazuh SIEM, log analysis, security monitoring, Nmap, Wireshark, vulnerability
+                            assessment and IAM concepts.</p>
+                    </div>
+                </article>
+                <article class="timeline-item reveal" data-timeline-item>
+                    <span class="timeline-node" aria-hidden="true"></span>
+                    <div class="timeline-card">
+                        <span class="eyebrow">05 / 2025</span>
+                        <h3 data-animate-text>CTF &amp; Practical Challenges</h3>
+                        <p>Cybersecurity CTF Competition Participant with Team USJP, while continuing practical security
+                            investigation challenges.</p>
+                    </div>
+                </article>
+                <article class="timeline-item reveal current-focus" data-timeline-item>
+                    <span class="timeline-node" aria-hidden="true"></span>
+                    <div class="timeline-card">
+                        <span class="eyebrow">06 / Current focus</span>
+                        <h3 data-animate-text>Future Direction</h3>
+                        <p>Continuing to develop in cybersecurity, SOC operations, network security, IAM, cloud
+                            security and governance.</p>
+                        <strong>CCNA: Currently pursuing</strong>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
     <!-- SERVICE SECTION /////////////////////////////////////////////////// -->
-    <section id="services" class="services">
+    <section id="services" class="services reveal">
         <div class="main-text">
-
-
-            <!-- Spline 3D section under Our Services -->
+            <h2 data-animate-text>Security, systems &amp; infrastructure</h2>
+            <p class="section-intro">Explore the environment behind the work. The interactive scene remains fully
+                powered by Spline.</p>
+        </div>
+        <div class="spline-stage">
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.99/build/spline-viewer.js"></script>
             <spline-viewer url="https://prod.spline.design/dQLzHjoSVcoWEyQt/scene.splinecode"></spline-viewer>
-
-
-            <span>What i will do for you</span>
-            <h2>Our Services</h2>
         </div>
 
-        <div class="section-services">
-            <div class="service-box">
+        <div class="section-services stagger">
+            <div class="service-box reveal">
                 <i class='bx  bx-code-alt service-icon'></i>
                 <h3>Web Development</h3>
                 <p>
@@ -218,7 +297,7 @@ M52.3,-17.3C61.2,10.4,57.3,42,39.1,55.7C20.9,69.4,-11.7,65.1,-32.4,49C-53.1,32.9
                     <a href="#" class="btn">Read More</a>
                 </div>
             </div>
-            <div class="service-box">
+            <div class="service-box reveal">
                 <i class='bx  bx-bookmark service-icon'></i>
                 <h3>Network Administration</h3>
                 <p>
@@ -229,7 +308,7 @@ M52.3,-17.3C61.2,10.4,57.3,42,39.1,55.7C20.9,69.4,-11.7,65.1,-32.4,49C-53.1,32.9
                     <a href="#" class="btn">Read More</a>
                 </div>
             </div>
-            <div class="service-box">
+            <div class="service-box reveal">
                 <i class='bx  bx-desktop service-icon'></i>
                 <h3>Cyber Security</h3>
                 <p>
@@ -246,112 +325,50 @@ M52.3,-17.3C61.2,10.4,57.3,42,39.1,55.7C20.9,69.4,-11.7,65.1,-32.4,49C-53.1,32.9
     </section>
 
     <!-- SKILL SECTION ////////////////////////////////////////////////////// -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills reveal">
         <div class="main-text">
-
-            <span>
-                technical and professional
-            </span>
-            <h2>
-                My Skills
-            </h2>
-            <!-- <div class="robot">
-                <script type="module"
-                    src="https://unpkg.com/@splinetool/viewer@1.10.99/build/spline-viewer.js"></script>
-                <spline-viewer url="https://prod.spline.design/iNKqKvvk6SYj7vQl/scene.splinecode"></spline-viewer>
-            </div> -->
+         
+            <h2 data-animate-text>Technical Skills</h2>
+            <p class="section-intro">A practical toolkit built through coursework, labs, network designs and security
+                challenges. Proficiency percentages are intentionally not assigned.</p>
         </div>
-
-        <div class="skill-main">
-            <div class="skill-left">
-                <h3>
-                    Technical Skills
-                </h3>
-
-                <div class="skill-bar">
-                    <div class="info">
-                        <p>HTML</p>
-                        <P>85%</P>
-                    </div>
-                    <div class="bar">
-                        <span class="html"></span>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="info">
-                        <p>Linux</p>
-                        <P>80%</P>
-                    </div>
-                    <div class="bar">
-                        <span class="figma"></span>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="info">
-                        <p>JavaScript</p>
-                        <P>72%</P>
-                    </div>
-                    <div class="bar">
-                        <span class="javascript"></span>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="info">
-                        <p>CSS</p>
-                        <P>95%</P>
-                    </div>
-                    <div class="bar">
-                        <span class="css"></span>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!-- skill right  -->
-
-            <div class="skill-right">
-                <h3>Professional Skills</h3>
-                <div class="professional">
-                    <div class="box">
-                        <div class="circle" data-dots="90" data-percent="90"></div>
-                        <div class="text">
-                            <big>90%</big>
-                            <small>Team Work</small>
-                        </div>
-                    </div>
-
-                    <div class="box">
-                        <div class="circle" data-dots="78" data-percent="78"></div>
-                        <div class="text">
-                            <big>78%</big>
-                            <small>Creativity</small>
-                        </div>
-                    </div>
-
-                    <div class="box">
-                        <div class="circle" data-dots="84" data-percent="84"></div>
-
-
-
-                        <div class="text">
-                            <big>84%</big>
-                            <small>Communication</small>
-                        </div>
-                    </div>
-
-                    <div class="box">
-                        <div class="circle" data-dots="89" data-percent="89"></div>
-
-
-
-                        <div class="text">
-                            <big>89%</big>
-                            <small>Project Management </small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="skills-grid stagger">
+            <article class="skill-card reveal">
+                <i class='bx bx-shield-quarter skill-card-icon' aria-hidden="true"></i>
+                <h3 data-animate-text>Cybersecurity</h3>
+                <ul>
+                    <li>SIEM Monitoring</li><li>IAM / IGA / PAM</li><li>JML</li><li>Log Analysis</li>
+                    <li>Vulnerability Assessment</li><li>Network Security</li><li>Threat Detection</li>
+                    <li>File Integrity Monitoring</li><li>Incident Analysis</li><li>Web Application Security</li>
+                </ul>
+            </article>
+            <article class="skill-card reveal">
+                <i class='bx bx-network-chart skill-card-icon' aria-hidden="true"></i>
+                <h3 data-animate-text>Networking</h3>
+                <ul>
+                    <li>Cisco IOS</li><li>Cisco Packet Tracer</li><li>VLAN Configuration</li><li>Trunking</li>
+                    <li>Inter-VLAN Routing</li><li>OSPF</li><li>DHCP / DNS</li><li>NAT</li><li>STP / RSTP</li>
+                    <li>ACL</li><li>SSH</li><li>ROAS</li><li>IPv4 Addressing</li><li>Subnetting and VLSM</li>
+                    <li>Network Troubleshooting</li>
+                </ul>
+            </article>
+            <article class="skill-card reveal">
+                <i class='bx bx-code-alt skill-card-icon' aria-hidden="true"></i>
+                <h3 data-animate-text>Programming &amp; Development</h3>
+                <ul>
+                    <li>Python</li><li>Java</li><li>C#</li><li>Dart</li><li>JavaScript</li><li>SQL</li>
+                    <li>Flutter</li><li>MERN Stack fundamentals</li>
+                </ul>
+            </article>
+            <article class="skill-card reveal">
+                <i class='bx bx-terminal skill-card-icon' aria-hidden="true"></i>
+                <h3 data-animate-text>Systems &amp; Tools</h3>
+                <ul>
+                    <li>Linux</li><li>Ubuntu</li><li>Kali Linux</li><li>VirtualBox</li><li>GNS3</li>
+                    <li>Wazuh</li><li>Nmap</li><li>Wireshark</li><li>Hydra</li><li>Metasploit</li>
+                    <li>Burp Suite</li><li>PuTTY</li><li>Git / GitHub</li><li>Visual Studio Code</li>
+                </ul>
+            </article>
         </div>
 
 
@@ -359,158 +376,136 @@ M52.3,-17.3C61.2,10.4,57.3,42,39.1,55.7C20.9,69.4,-11.7,65.1,-32.4,49C-53.1,32.9
 
     <!-- LATEST PROJECT /////////////////////////////////////////////////////////////////////////////// -->
 
-    <section id="portfolio" class="portfolio">
+
+
+    <!-- <div class="container"> -->
+    <section id="portfolio" class="portfolio reveal">
         <div class="main-text">
-            <span>
-                What i will do for you
-            </span>
-            <h2>Latest Projects</h2>
-            <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.99/build/spline-viewer.js"></script>
-<spline-viewer url="https://prod.spline.design/ruMndISW8HBGG3gP/scene.splinecode"></spline-viewer> -->
+            <h2 data-animate-text> Project Showcase</h2>
+            <p class="section-intro">Practical security, infrastructure and development work from my current learning
+                path.</p>
 
         </div>
-        <div class="container">
-            <div class="fillter-buttons">
-                <button class="btn">All</button>
-                <button class="btn">Product</button>
-                <button class="btn">Interacting</button>
-                <button class="btn">Web App</button>
+        <div class="fillter-buttons" role="group" aria-label="Filter projects">
+                <button class="btn active" type="button" data-filter="all">All</button>
+                <button class="btn" type="button" data-filter="security">Security</button>
+                <button class="btn" type="button" data-filter="networking">Networking</button>
+                <button class="btn" type="button" data-filter="development">Development</button>
 
             </div>
-
-            <div class="portfolio-gallery">
-                <div class="port-box">
-                    <div class="port-image">
-                        <img src="images/Gaming-web.png" alt="Project">
+            <div class="featured-projects">
+                <article class="port-box reveal project-featured" data-category="security">
+                    <div class="project-art project-art-wazuh">
+                        <i class='bx bx-radar' aria-hidden="true"></i>
+                        <span>WAZUH / SIEM LAB</span>
                     </div>
-
                     <div class="port-content">
-                        <h3>NEXUS – Metaverse Gaming </h3>
-                        <p>
-                           NEXUS is a modern and futuristic gaming website landing page designed to represent a next-generation gaming ecosystem.
-                        </p>
-                        <a href="https://aakifgaming.vercel.app/"target="_blank" rel="noopener noreferrer"><i class='bx bx-link-external'></i></a>
+                        <span class="project-kicker"> / Security operations</span>
+                        <h3 >Wazuh SIEM &amp; XDR Home Lab</h3>
+                        <p>Deployed Wazuh SIEM for centralized security monitoring and log analysis in a virtualized
+                            environment.</p>
+                        <div class="tech-tags"><span>Wazuh</span><span>Ubuntu Server</span><span>VirtualBox</span><span>SSH Monitoring</span></div>
+                        <details><summary>View project details</summary><p>Investigated security alerts through the Wazuh dashboard using Windows, Ubuntu Server and Kali Linux lab hosts.</p></details>
                     </div>
-                </div>
-                <div class="port-box">
-                    <div class="port-image">
-                        <img src="images/portfolio (2).png" alt="Project">
+                </article>
+                <article class="port-box reveal project-featured" data-category="networking">
+                    <div class="project-art project-art-network">
+                        <i class='bx bx-network-chart' aria-hidden="true"></i>
+                        <span>ENTERPRISE / NETWORK</span>
                     </div>
-
                     <div class="port-content">
-                        <h3>Front-end Developer Portfolio</h3>
-                        <p>
-                            A modern, responsive portfolio website showcasing the work of Ahamed Aakif, a front-end developer experienced in website, mobile, and software development.
-
-                        </p>
-                        <a href="https://ahamedaakif.vercel.app/"target="_blank" rel="noopener noreferrer"><i class='bx bx-link-external'></i></a>
+                        <span class="project-kicker"> / Infrastructure</span>
+                        <h3 >Enterprise Network Design and Configuration</h3>
+                        <p>Designed an enterprise topology with department separation, trunk links and dynamic routing.</p>
+                        <div class="tech-tags"><span>Cisco Packet Tracer</span><span>Cisco IOS</span><span>VLAN</span><span>DHCP</span><span>OSPF</span></div>
+                        <details><summary>View project details</summary><p>Configured multiple VLANs and trunk links to transport traffic across the enterprise topology.</p></details>
+                        <a class="project-link" href="https://github.com/MMAhamedAakif/Enterprise-Networking-.git" target="_blank" rel="noopener noreferrer">GitHub <i class='bx bx-up-arrow-alt'></i></a>
                     </div>
-                </div>
-                <div class="port-box">
-                    <div class="port-image">
-                        <img src="images/Nexus.png" alt="Project">
+                </article>
+                <article class="port-box reveal project-featured" data-category="networking">
+                    <div class="project-art project-art-bank">
+                        <img src="images/Enterprise Bank Network.png" alt="Enterprise Bank Network design" loading="lazy">
                     </div>
-
                     <div class="port-content">
-                        <h3>Graphic Desing</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nulla reiciendis repellat
-                            dicta eligendi voluptatum facere nemo saepe? Qui, repudiandae.
-
-                        </p>
-                        <a href="#"><i class='bx bx-link-external'></i></a>
+                        <span class="project-kicker"> / Network architecture</span>
+                        <h3 >Enterprise Bank Network Design</h3>
+                        <p>Designed a four-floor enterprise bank network with structured addressing, segmentation and resilient connectivity.</p>
+                        <div class="tech-tags"><span>IP Addressing</span><span>VLSM</span><span>VLAN</span><span>Routing</span></div>
+                        <details><summary>View project details</summary><p>Implemented 12 VLANs, inter-VLAN routing, redundant network connections and centralized DHCP, DNS and Mail servers.</p></details>
                     </div>
-                </div>
-                <div class="port-box">
-                    <div class="port-image">
-                        <img src="images/royal Heven.png" alt="Project">
+                </article>
+                <article class="port-box reveal project-featured" data-category="development">
+                    <div class="project-art project-art-restaurant">
+                        <i class='bx bx-restaurant' aria-hidden="true"></i>
+                        <span>SMART / RESTAURANT</span>
                     </div>
-
                     <div class="port-content">
-                        <h3>THE ROYAL HAVEN</h3>
-                        <p>
-                           THE ROYAL HAVEN is a modern luxury restaurant website designed to provide visitors with an elegant online dining experience.
-
-                        </p>
-                        <a href="https://royalhaven-two.vercel.app/"target="_blank" rel="noopener noreferrer"><i class='bx bx-link-external'></i></a>
+                        <span class="project-kicker"> / Full-stack development</span>
+                        <h3 >Smart Restaurant Ordering &amp; Customization System</h3>
+                        <p>Developed a full-stack restaurant management and digital ordering system.</p>
+                        <div class="tech-tags"><span>MERN Stack</span><span>Backend Development</span><span>Git</span><span>GitHub</span></div>
                     </div>
-                </div>
-
-                <div class="port-box">
-                    <div class="port-image">
-                        <img src="images/calculator.png" alt="Project">
-                    </div>
-
-                    <div class="port-content">
-                        <h3>Graphic Desing</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nulla reiciendis repellat
-                            dicta eligendi voluptatum facere nemo saepe? Qui, repudiandae.
-
-                        </p>
-                        <a href="https://calculator.vercel.app/"target="_blank" rel="noopener noreferrer"><i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
-
-                <div class="port-box">
-                    <div class="port-image">
-                        <img src="images/portfolio (2).png" alt="Project">
-                    </div>
-
-                    <div class="port-content">
-                        <h3>Graphic Desing</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nulla reiciendis repellat
-                            dicta eligendi voluptatum facere nemo saepe? Qui, repudiandae.
-
-                        </p>
-                        <a href="#"target="_blank" rel="noopener noreferrer"><i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
+                </article>
             </div>
-        </div>
-
-        </secttion>
+    </section>
 
 
 
 
-        <!-- CONTACT SECTION////////////////////////////////////////////////////////////////// -->
-        <section id="contactme" class="contactme">
-            <div class="main-text">
-                <span>
-                    Ask me question
-                </span>
-                <h2>Contact Me</h2>
-                <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.99/build/spline-viewer.js"></script>
-<spline-viewer url="https://prod.spline.design/hrkEd28xzTZvPKU9/scene.splinecode"></spline-viewer> -->
-            </div>
-
-            <form action="#">
-                <input type="text" placeholder="Your Name">
-                <input type="text" placeholder="Your Email">
-                <input type="text" placeholder="Your Address">
-                <input type="number" placeholder="PHone Number">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                <div class="btn-box formBtn">
-                    <button type="submit" class="btn">Send Message</button>
+            <!-- CONTACT SECTION////////////////////////////////////////////////////////////////// -->
+            <section id="contactme" class="contactme reveal">
+                <div class="main-text">
+                    <h2 data-animate-text>Contact Me</h2>
                 </div>
-            </form>
-            <!-- <iframe src='https://my.spline.design/ticktockinteractivelanding-05c3Slkag3OSk375e64SPCl5/' frameborder='0' width='100%' height='100%'></iframe> -->
-        </section>
-        <script src="script.js"></script>
-        <!-- FOOTER SECTION /////////////////////////////////////////////////////////////// -->
-        <footer class="footer">
-            <div class="footer-content">
-                <p>&copy; 2026 Ahamed Aakif. All rights reserved.</p>
-                <div class="footer-socials">
-                    <a href="www.linkedin.com/in/mmahamedaakif"target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-                    <a href="#"target="_blank" rel="noopener noreferrer" title="GitHub"><i class='bx bxl-github'></i></a>
-                    <a href="#"target="_blank" rel="noopener noreferrer" title="X (Twitter)"><i class='bx bx-x'></i></a>
-                    <a href="#"target="_blank" rel="noopener noreferrer" title="Discord"><i class='bx bxl-discord-alt'></i></a>
+
+                <div class="contact-main">
+                    <div class="contact-left">
+                        <h3>Send a Message</h3>
+                        <form action="#" novalidate>
+                            <input type="text" placeholder="Your Name">
+                            <input type="text" placeholder="Your Email">
+                            <input type="text" placeholder="Your Address">
+                            <input type="number" placeholder="Phone Number">
+                            <textarea name="" id="" cols="30" rows="10"
+                                placeholder="Your Message"></textarea>
+                            <div class="btn-box formBtn">
+                                <button type="submit" class="btn">Send Message</button>
+                            </div>
+                            <p class="form-status" role="status" aria-live="polite"></p>
+                        </form>
+                    </div>
+
+                    <div class="contact-right">
+                        <h3>Let's Connect</h3>
+                        <iframe
+                            src='https://my.spline.design/ticktockinteractivelanding-05c3Slkag3OSk375e64SPCl5/'
+                            title="Interactive contact illustration" frameborder='0'></iframe>
+                    </div>
                 </div>
-            </div>
-        </footer>
+            </section>
+
+            <!-- FOOTER SECTION /////////////////////////////////////////////////////////////// -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>&copy; 2026 Ahamed Aakif. All rights reserved.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/mmahamedaakif" target="_blank" rel="noopener noreferrer"
+                            title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/MMAhamedAakif" target="_blank" rel="noopener noreferrer" title="GitHub"><i
+                                class='bx bxl-github'></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" title="X (Twitter)"><i
+                                class='bx bx-x'></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" title="Discord"><i
+                                class='bx bxl-discord-alt'></i></a>
+                    </div>
+                </div>
+            </footer>
+            </main>
+            <a class="back-to-top btn" href="#home" aria-label="Back to top"><i class='bx bx-up-arrow-alt'></i></a>
+
+            <script src="script.js"></script>
+
+
 
 </body>
 
