@@ -1277,3 +1277,266 @@ body:not(.light-theme) .journey .current-focus.is-active .timeline-card {
         animation: none;
     }
 }
+
+/* Premium Arctic light theme */
+body.light-theme {
+    --bg: #f8fafc;
+    --surface: #eff6ff;
+    --card: #ffffff;
+    --panel: rgba(255, 255, 255, .78);
+    --panel-soft: rgba(255, 255, 255, .88);
+    --input: rgba(255, 255, 255, .86);
+    --purple: #2563eb;
+    --violet: #0891b2;
+    --magenta: #0f9f91;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --accent-soft: rgba(6, 182, 212, .08);
+    --shadow: 0 8px 30px rgba(15, 23, 42, .06);
+    background:
+        radial-gradient(circle at 85% 15%, rgba(6, 182, 212, .07), transparent 35%),
+        radial-gradient(circle at 10% 80%, rgba(37, 99, 235, .05), transparent 35%),
+        #f8fafc;
+    color: #1e293b;
+}
+body.light-theme::before {
+    background-image:
+        linear-gradient(rgba(37, 99, 235, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, .025) 1px, transparent 1px);
+    background-size: 72px 72px;
+    opacity: .7;
+}
+body.light-theme .home,
+body.light-theme .journey,
+body.light-theme .services,
+body.light-theme .portfolio,
+body.light-theme .footer {
+    background: transparent;
+}
+body.light-theme .about,
+body.light-theme .skills,
+body.light-theme .contactme {
+    background: #f1f5f9;
+}
+body.light-theme header {
+    background: rgba(255, 255, 255, .72);
+    border-bottom-color: rgba(203, 213, 225, .65);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+}
+body.light-theme header.scrolled {
+    background: rgba(255, 255, 255, .88);
+    border-color: #e2e8f0;
+}
+body.light-theme .navlist {
+    background: rgba(255, 255, 255, .9);
+}
+body.light-theme .navlist a {
+    color: #475569;
+}
+body.light-theme .navlist a:hover,
+body.light-theme .navlist a.active {
+    color: #1e293b;
+}
+body.light-theme .navlist a::after {
+    background: linear-gradient(110deg, #2563eb, #06b6d4, #14b8a6, #34d399);
+}
+body.light-theme h1 em,
+body.light-theme .change-text h3:last-child {
+    color: #2563eb;
+}
+body.light-theme .eyebrow,
+body.light-theme .main-text > span,
+body.light-theme .project-kicker {
+    color: #0f9f91;
+}
+body.light-theme .home-content > p,
+body.light-theme .about-content p,
+body.light-theme .service-box p,
+body.light-theme .port-content p,
+body.light-theme .section-intro {
+    color: #475569;
+}
+body.light-theme .blob path,
+body.light-theme .blob1 path {
+    fill: #06b6d4;
+}
+body.light-theme .blob,
+body.light-theme .blob1 {
+    filter: drop-shadow(0 0 28px rgba(6, 182, 212, .2));
+}
+body.light-theme .identity-status,
+body.light-theme .identity-status.scramble-active {
+    color: #059669;
+}
+body.light-theme .identity-status i {
+    background: #059669;
+    box-shadow: 0 0 10px rgba(5, 150, 105, .45);
+}
+body.light-theme .service-box,
+body.light-theme .port-box,
+body.light-theme .contact-left,
+body.light-theme .contact-right,
+body.light-theme .skill-card,
+body.light-theme .info-about1,
+body.light-theme .info-about2,
+body.light-theme .info-about3,
+body.light-theme .box {
+    background: rgba(255, 255, 255, .78);
+    border-color: rgba(203, 213, 225, .65);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, .06);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+}
+body.light-theme .service-box:hover,
+body.light-theme .port-box:hover,
+body.light-theme .skill-card:hover {
+    border-color: rgba(37, 99, 235, .45);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, .1);
+}
+body.light-theme .info-about1 > span,
+body.light-theme .info-about2 > span,
+body.light-theme .info-about3 > span,
+body.light-theme .skill-card-icon {
+    color: #2563eb;
+}
+body.light-theme .skill-card li,
+body.light-theme .tech-tags span {
+    background: rgba(239, 246, 255, .8);
+    border-color: #e2e8f0;
+    color: #475569;
+}
+body.light-theme .skill-card li:hover {
+    background: rgba(6, 182, 212, .1);
+    border-color: #0891b2;
+    color: #1e293b;
+}
+body.light-theme .bar {
+    background: #e2e8f0;
+}
+body.light-theme .bar span {
+    background: linear-gradient(110deg, #2563eb 0%, #06b6d4 38%, #14b8a6 70%, #34d399 100%);
+}
+body.light-theme .project-art {
+    background: linear-gradient(135deg, #eff6ff, #ecfeff);
+    color: #0891b2;
+}
+body.light-theme .project-art::after {
+    background: rgba(6, 182, 212, .06);
+    border-color: rgba(37, 99, 235, .14);
+}
+body.light-theme .contactme input,
+body.light-theme .contactme textarea {
+    background: rgba(255, 255, 255, .78);
+    border-color: #cbd5e1;
+    color: #1e293b;
+}
+body.light-theme .contactme input:focus,
+body.light-theme .contactme textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, .12);
+}
+body.light-theme .timeline::before {
+    background: linear-gradient(180deg, #2563eb, #06b6d4, #14b8a6, #34d399);
+    box-shadow: 0 0 10px rgba(6, 182, 212, .2);
+}
+body.light-theme .timeline-progress {
+    background: rgba(6, 182, 212, .12);
+}
+body.light-theme .timeline-progress span {
+    background: linear-gradient(180deg, #2563eb, #06b6d4, #14b8a6, #34d399);
+    box-shadow: 0 0 10px rgba(6, 182, 212, .25);
+}
+body.light-theme .timeline-node {
+    background: #2563eb;
+    border-color: #f8fafc;
+    box-shadow: 0 0 0 1px #06b6d4, 0 0 10px rgba(6, 182, 212, .3);
+}
+body.light-theme .timeline-item.is-complete .timeline-node {
+    background: #34d399;
+    box-shadow: 0 0 0 1px #14b8a6, 0 0 12px rgba(52, 211, 153, .35);
+}
+body.light-theme .timeline-card {
+    background: rgba(255, 255, 255, .78);
+    border-color: rgba(203, 213, 225, .65);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, .05);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+}
+body.light-theme .timeline-card::before {
+    border-color: rgba(6, 182, 212, .3);
+}
+body.light-theme .timeline-card h3 {
+    color: #1e293b;
+}
+body.light-theme .timeline-card p {
+    color: #64748b;
+}
+body.light-theme .timeline-card .eyebrow {
+    color: #0891b2;
+}
+body.light-theme .timeline-card strong {
+    color: #059669;
+}
+body.light-theme .timeline-item.is-complete .timeline-card,
+body.light-theme .timeline-item.is-active .timeline-card {
+    border-color: rgba(6, 182, 212, .55);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, .06);
+}
+body.light-theme .current-focus .timeline-card {
+    background:
+        linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, .78)) padding-box,
+        linear-gradient(135deg, #2563eb, #06b6d4, #14b8a6) border-box;
+    border-color: transparent;
+}
+body.light-theme .btn:not(.js-download-cv) {
+    background:
+        linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, .78)) padding-box,
+        linear-gradient(110deg, #2563eb 0%, #06b6d4 38%, #14b8a6 70%, #34d399 100%) border-box;
+    border-color: transparent;
+    color: #1e293b;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, .1);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+body.light-theme .btn:not(.js-download-cv):hover {
+    background:
+        linear-gradient(rgba(239, 246, 255, .92), rgba(239, 246, 255, .92)) padding-box,
+        linear-gradient(110deg, #2563eb 0%, #06b6d4 38%, #14b8a6 70%, #34d399 100%) border-box;
+    box-shadow: 0 10px 24px rgba(6, 182, 212, .16);
+    color: #1e293b;
+}
+body.light-theme .btn.js-download-cv {
+    background:
+        linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, .78)) padding-box,
+        linear-gradient(110deg, #2563eb 0%, #06b6d4 38%, #14b8a6 70%, #34d399 100%) border-box;
+    color: #1e293b;
+}
+body.light-theme .btn.js-download-cv:hover {
+    background:
+        linear-gradient(rgba(239, 246, 255, .94), rgba(239, 246, 255, .94)) padding-box,
+        linear-gradient(110deg, #2563eb 0%, #06b6d4 38%, #14b8a6 70%, #34d399 100%) border-box;
+    color: #1e293b;
+}
+body.light-theme .social-icons a,
+body.light-theme .footer-socials a,
+body.light-theme .icon-button,
+body.light-theme #menu-icon {
+    background: rgba(255, 255, 255, .7);
+    border-color: #e2e8f0;
+    color: #475569;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+body.light-theme .social-icons a:hover,
+body.light-theme .footer-socials a:hover,
+body.light-theme .icon-button:hover,
+body.light-theme #menu-icon:hover {
+    background: rgba(6, 182, 212, .1);
+    border-color: #0891b2;
+    color: #2563eb;
+}
+body.light-theme .footer {
+    border-top-color: #e2e8f0;
+}

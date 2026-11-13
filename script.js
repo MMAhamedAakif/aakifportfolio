@@ -262,7 +262,8 @@ if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
 
 const themeToggle = document.querySelector('.theme-toggle');
 const storedTheme = localStorage.getItem('portfolio-theme');
-if (storedTheme === 'light') body.classList.add('light-theme');
+const prefersLightTheme = window.matchMedia('(prefers-color-scheme: light)').matches;
+if (storedTheme === 'light' || (!storedTheme && prefersLightTheme)) body.classList.add('light-theme');
 const updateThemeLabel = () => {
     const isLight = body.classList.contains('light-theme');
     themeToggle?.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');

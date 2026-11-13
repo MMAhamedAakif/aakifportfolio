@@ -13,6 +13,14 @@
 </head>
 
 <body>
+    <script>
+        (() => {
+            const storedTheme = localStorage.getItem('portfolio-theme');
+            if (storedTheme === 'light' || (!storedTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+                document.body.classList.add('light-theme');
+            }
+        })();
+    </script>
     <a class="skip-link" href="#home">Skip to content</a>
     <div class="loader">
         <div class="loader-noise" aria-hidden="true"></div>
