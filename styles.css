@@ -1805,3 +1805,131 @@ body.light-theme .footer {
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
 }
+
+/* Contact section: midnight cybersecurity glass */
+body:not(.light-theme) .contactme {
+    --contact-midnight: #070B14;
+    --contact-navy: #111C2D;
+    --contact-blue: #2563EB;
+    --contact-cyan: #06B6D4;
+    --contact-teal: #14B8A6;
+    --contact-mint: #34D399;
+    background:
+        radial-gradient(circle at 8% 12%, rgba(37, 99, 235, .2), transparent 28rem),
+        radial-gradient(circle at 92% 84%, rgba(6, 182, 212, .14), transparent 26rem),
+        linear-gradient(145deg, rgba(17, 28, 45, .35), transparent 58%),
+        var(--contact-midnight);
+    isolation: isolate;
+    overflow: hidden;
+}
+
+body:not(.light-theme) .contactme::after {
+    background: linear-gradient(90deg, transparent, rgba(6, 182, 212, .45), transparent);
+    content: "";
+    height: 1px;
+    left: 10%;
+    opacity: .7;
+    position: absolute;
+    top: 0;
+    width: 80%;
+}
+
+body:not(.light-theme) .contactme .main-text h2,
+body:not(.light-theme) .contactme h3 {
+    color: #f1f5f9;
+}
+
+body:not(.light-theme) .contactme .main-text h2::after {
+    background: linear-gradient(135deg, var(--contact-blue) 0%, var(--contact-teal) 50%, var(--contact-cyan) 100%);
+}
+
+body:not(.light-theme) .contact-main {
+    gap: clamp(1.5rem, 5vw, 4rem);
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+}
+
+body:not(.light-theme) .contact-left,
+body:not(.light-theme) .contact-right {
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, .035), transparent 42%),
+        rgba(17, 28, 45, .75);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 18px;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, .3), 0 0 30px rgba(37, 99, 235, .08);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+}
+
+body:not(.light-theme) .contact-left:hover,
+body:not(.light-theme) .contact-right:hover {
+    border-color: rgba(6, 182, 212, .3);
+    box-shadow: 0 26px 65px rgba(0, 0, 0, .34), 0 0 34px rgba(37, 99, 235, .13);
+    transform: translateY(-3px);
+}
+
+body:not(.light-theme) .contactme label {
+    color: #a7b0c0;
+}
+
+body:not(.light-theme) .contactme input,
+body:not(.light-theme) .contactme textarea {
+    background: rgba(17, 28, 45, .72);
+    border-color: rgba(255, 255, 255, .08);
+    border-radius: 10px;
+    color: #f1f5f9;
+}
+
+body:not(.light-theme) .contactme input::placeholder,
+body:not(.light-theme) .contactme textarea::placeholder {
+    color: #94a3b8;
+}
+
+body:not(.light-theme) .contactme input:focus,
+body:not(.light-theme) .contactme textarea:focus {
+    border-color: var(--contact-blue);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, .14), 0 0 18px rgba(37, 99, 235, .12);
+}
+
+body:not(.light-theme) .contactme .formBtn .btn {
+    background: linear-gradient(135deg, var(--contact-blue) 0%, var(--contact-teal) 50%, var(--contact-cyan) 100%);
+    border: 1px solid transparent;
+    box-shadow: 0 8px 22px rgba(37, 99, 235, .2);
+    color: #ffffff;
+}
+
+body:not(.light-theme) .contactme .formBtn .btn:hover {
+    box-shadow: 0 12px 28px rgba(37, 99, 235, .35), 0 0 22px rgba(6, 182, 212, .16);
+    transform: translateY(-3px);
+}
+
+body:not(.light-theme) .contactme .form-status {
+    color: var(--contact-mint);
+}
+
+body:not(.light-theme) .contactme .form-status:not(:empty)::before {
+    color: var(--contact-mint);
+    content: "●";
+    font-size: .65rem;
+    margin-right: .4rem;
+    vertical-align: .08em;
+}
+
+body:not(.light-theme) .contact-right iframe {
+    border-color: rgba(6, 182, 212, .2);
+    box-shadow: 0 0 30px rgba(6, 182, 212, .1);
+}
+
+@media (max-width: 900px) {
+    body:not(.light-theme) .contact-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body:not(.light-theme) .contact-left,
+    body:not(.light-theme) .contact-right,
+    body:not(.light-theme) .contactme .formBtn .btn {
+        transition: none;
+    }
+}
