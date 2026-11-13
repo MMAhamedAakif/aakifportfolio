@@ -1556,7 +1556,7 @@ body.light-theme .footer {
 }
 body.light-theme .btn.js-download-cv {
     background:
-        linear-gradient(135deg, rgba(20, 35, 55, .85), rgba(10, 20, 30, .75)) padding-box,
+        linear-gradient(135deg, rgba(20, 35, 55, .62), rgba(10, 20, 30, .52)) padding-box,
         linear-gradient(90deg, #276bdb, #16c7b0, #49d66b) border-box;
     background-size: 100% 100%, 100% 100%;
     backdrop-filter: blur(15px);
@@ -1566,7 +1566,7 @@ body.light-theme .btn.js-download-cv {
 }
 body.light-theme .btn.js-download-cv:hover {
     background:
-        linear-gradient(135deg, rgba(20, 35, 55, .9), rgba(10, 20, 30, .82)) padding-box,
+        linear-gradient(135deg, rgba(20, 35, 55, .72), rgba(10, 20, 30, .62)) padding-box,
         linear-gradient(90deg, #276bdb, #16c7b0, #49d66b) border-box;
     background-size: 100% 100%, 100% 100%;
     box-shadow: 0 0 15px rgba(39, 107, 219, .4), 0 0 25px rgba(22, 199, 176, .3), 0 0 35px rgba(73, 214, 107, .2);
@@ -1574,4 +1574,7 @@ body.light-theme .btn.js-download-cv:hover {
 }
 body.light-theme .btn.js-download-cv:active {
     transform: scale(.97);
+}
+body:not(.light-theme) .contactme {
+    background: #111c2d;
 }
