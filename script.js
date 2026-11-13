@@ -137,6 +137,7 @@ const scrambleTargets = [
     elements.indexOf(element) === index && !element.closest('.home')
 ));
 const scrambleText = (element) => {
+    if (element.classList.contains('scramble-active')) return;
     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
     const nodes = [];
     let node;
@@ -165,11 +166,15 @@ const scrambleText = (element) => {
     }, 50);
 };
 const securityStatus = document.querySelector('.identity-status');
-if (securityStatus && !reducedMotion) {
+const recurringScrambleTargets = [...scrambleTargets, securityStatus].filter(Boolean);
+if (!reducedMotion && recurringScrambleTargets.length) {
     window.setInterval(() => {
         if (loader && !loader.classList.contains('is-hidden')) return;
-        scrambleText(securityStatus);
-    }, 6000);
+        recurringScrambleTargets.forEach((element) => {
+            const bounds = element.getBoundingClientRect();
+            if (bounds.bottom > 0 && bounds.top < window.innerHeight) scrambleText(element);
+        });
+    }, 9000);
 }
 const scrambleObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
