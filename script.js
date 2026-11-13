@@ -123,14 +123,14 @@ if (words.length) {
         wordIndex = (wordIndex + 1) % words.length;
         showWord(wordIndex);
         scrambleText(words[wordIndex]);
-    }, 4000); // text timing for the words to change every 4 seconds
+    }, 6000); // keep each role visible longer while preserving scramble speed
 }
 
 document.querySelectorAll('.circle').forEach((circle) => {
     circle.style.setProperty('--percent', circle.dataset.percent || '0');
 });
 
-const scrambleCharacters = '01@$#00011@#0$0110111@$#01@$#';
+const scrambleCharacters = '01@$#00011@#0$0110111@$#01@$#01@$#00011@#0$0110111@$#01@$#';
 const scrambleTargets = [
     ...document.querySelectorAll('[data-scramble], .eyebrow, .project-kicker, .info-about1')
 ].filter((element, index, elements) => (
@@ -146,7 +146,7 @@ const scrambleText = (element) => {
     if (!nodes.length) return;
     element.classList.add('scramble-active');
     const started = performance.now();
-    const duration = 1600;
+    const duration = 3200;
     const timer = window.setInterval(() => {
         const progress = Math.min((performance.now() - started) / duration, 1);
         nodes.forEach(({ node, original }) => {
@@ -164,6 +164,13 @@ const scrambleText = (element) => {
         }
     }, 50);
 };
+const securityStatus = document.querySelector('.identity-status');
+if (securityStatus && !reducedMotion) {
+    window.setInterval(() => {
+        if (loader && !loader.classList.contains('is-hidden')) return;
+        scrambleText(securityStatus);
+    }, 5000);
+}
 const scrambleObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
@@ -175,7 +182,7 @@ scrambleTargets.forEach((element) => scrambleObserver.observe(element));
 
 if (!reducedMotion) {
     const heroHeadline = document.querySelector('.home h1[data-scramble]');
-    const loaderDelay = loader ? 10050 : 0;
+    const loaderDelay = loader ? 1050 : 0;
     window.setTimeout(() => {
         if (heroHeadline) scrambleText(heroHeadline);
         if (words[0]) scrambleText(words[0]);

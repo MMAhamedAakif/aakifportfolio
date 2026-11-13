@@ -530,6 +530,7 @@ details p { min-height: 0; padding-top: .6rem; }
 .identity-status { color: #8db965; font: .63rem "DM Mono", monospace; letter-spacing: .08em; }
 .identity-status i { background: #8db965; border-radius: 50%; box-shadow: 0 0 10px rgba(141, 185, 101, .8); display: inline-block; height: .4rem; margin-right: .25rem; width: .4rem; }
 .scramble-active { color: var(--scramble-color); text-shadow: 0 0 14px color-mix(in srgb, var(--scramble-color) 55%, transparent); }
+.identity-status.scramble-active { color: #39ff88; text-shadow: 0 0 10px rgba(57, 255, 136, .45); }
 .text-reveal { display: inline; }.text-reveal .text-char { display: inline-block; opacity: 0; transform: translateY(.5em); }
 .text-reveal.is-visible .text-char { animation: char-in .45s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(var(--char-index) * 22ms); }
 .text-reveal.is-visible { text-shadow: 0 0 18px rgba(168, 85, 247, .12); }
