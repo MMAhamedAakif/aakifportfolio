@@ -73,7 +73,7 @@ const startTerminalBoot = () => {
     },850);
     const started = performance.now();
     const progressTimer = window.setInterval(() => {
-        const percentage = Math.min(Math.round(((performance.now() - started) / 7000) * 100), 100);
+        const percentage = Math.min(Math.round(((performance.now() - started) / 6000) * 100), 100);
         if (loaderProgress) loaderProgress.style.transform = `scaleX(${percentage / 100})`;
         if (loaderPercent) loaderPercent.textContent = `${percentage}%`;
         if (percentage === 100) window.clearInterval(progressTimer);
