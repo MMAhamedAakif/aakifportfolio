@@ -1519,27 +1519,6 @@ body.light-theme .btn.js-download-cv:hover {
         linear-gradient(110deg, #2563eb 0%, #06b6d4 38%, #14b8a6 70%, #34d399 100%) border-box;
     color: #1e293b;
 }
-body.light-theme .btn.js-download-cv {
-    background:
-        linear-gradient(135deg, rgba(20, 35, 55, .85), rgba(10, 20, 30, .75)) padding-box,
-        linear-gradient(90deg, #276bdb, #16c7b0, #49d66b) border-box;
-    background-size: 100% 100%, 100% 100%;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0 0 12px rgba(39, 107, 219, .18), 0 0 20px rgba(22, 199, 176, .12);
-    color: #f4f7ff;
-}
-body.light-theme .btn.js-download-cv:hover {
-    background:
-        linear-gradient(135deg, rgba(20, 35, 55, .9), rgba(10, 20, 30, .82)) padding-box,
-        linear-gradient(90deg, #276bdb, #16c7b0, #49d66b) border-box;
-    background-size: 100% 100%, 100% 100%;
-    box-shadow: 0 0 15px rgba(39, 107, 219, .4), 0 0 25px rgba(22, 199, 176, .3), 0 0 35px rgba(73, 214, 107, .2);
-    color: #f4f7ff;
-}
-body.light-theme .btn.js-download-cv:active {
-    transform: scale(.97);
-}
 body.light-theme .btn,
 body.light-theme .btn.js-download-cv {
     background:
@@ -1574,4 +1553,25 @@ body.light-theme #menu-icon:hover {
 }
 body.light-theme .footer {
     border-top-color: #e2e8f0;
+}
+body.light-theme .btn.js-download-cv {
+    background:
+        linear-gradient(135deg, rgba(20, 35, 55, .85), rgba(10, 20, 30, .75)) padding-box,
+        linear-gradient(90deg, #276bdb, #16c7b0, #49d66b) border-box;
+    background-size: 100% 100%, 100% 100%;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 0 12px rgba(39, 107, 219, .18), 0 0 20px rgba(22, 199, 176, .12);
+    color: #f4f7ff;
+}
+body.light-theme .btn.js-download-cv:hover {
+    background:
+        linear-gradient(135deg, rgba(20, 35, 55, .9), rgba(10, 20, 30, .82)) padding-box,
+        linear-gradient(90deg, #276bdb, #16c7b0, #49d66b) border-box;
+    background-size: 100% 100%, 100% 100%;
+    box-shadow: 0 0 15px rgba(39, 107, 219, .4), 0 0 25px rgba(22, 199, 176, .3), 0 0 35px rgba(73, 214, 107, .2);
+    color: #f4f7ff;
+}
+body.light-theme .btn.js-download-cv:active {
+    transform: scale(.97);
 }
