@@ -130,7 +130,7 @@ document.querySelectorAll('.circle').forEach((circle) => {
     circle.style.setProperty('--percent', circle.dataset.percent || '0');
 });
 
-const scrambleCharacters = '01#$%@&!?~01#$%@&!?~';
+const scrambleCharacters = '01#$%@&~01#$%@&~';
 const scrambleTargets = [
     ...document.querySelectorAll('[data-scramble], .eyebrow, .project-kicker, .info-about1')
 ].filter((element, index, elements) => (
