@@ -508,8 +508,8 @@ details p { min-height: 0; padding-top: .6rem; }
 .terminal-body { min-height: 270px; padding: 1.5rem; position: relative; }
 .terminal-prompt { color: #b7e77d; font-size: .78rem; margin-bottom: 1.25rem; }
 .terminal-prompt span { color: #d7b8ff; }.terminal-cursor { animation: cursor-blink .8s step-end infinite; color: #b7e77d; font-weight: 400; }
-.terminal-log { color: #c9b8d9; display: grid; font-size: .76rem; gap: .55rem; min-height: 145px; }
-.terminal-line { animation: terminal-line-in .25s ease both; }.terminal-line::before { color: #a855f7; content: ">> "; }.terminal-line.is-success { color: #b7e77d; }
+.terminal-log { color: #eee8ff; display: grid; font-size: .76rem; gap: .55rem; min-height: 145px; }
+.terminal-line { animation: terminal-line-in .25s ease both; }.terminal-line::before { color: #a855f7; content: ">> "; }.terminal-line.is-success { color: #39ff88; }
 .loader-progress { background: rgba(168, 85, 247, .16); height: 3px; margin-top: 1.2rem; overflow: hidden; }
 .loader-progress span { background: linear-gradient(90deg, #7627d5, #a855f7, #b7e77d); display: block; height: 100%; transform: scaleX(0); transform-origin: left; width: 100%; }
 .loader-meta { color: #8d7ba3; display: flex; font-size: .65rem; justify-content: space-between; margin-top: .55rem; }
