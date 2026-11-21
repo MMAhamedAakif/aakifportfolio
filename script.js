@@ -13,18 +13,36 @@ const loaderPercent = document.querySelector('[data-loader-percent]');
 const loaderStatus = document.querySelector('[data-loader-status]');
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+let timelineScrollTimer = null;
 const updateTimeline = () => {
     if (!timeline) return;
     const bounds = timeline.getBoundingClientRect();
     const trigger = window.innerHeight * .68;
     const progressValue = clamp(((trigger - bounds.top) / bounds.height) * 100, 0, 100);
     timeline.style.setProperty('--timeline-progress', `${progressValue}%`);
-    let activeItem = null;
+    timeline.classList.add('is-scrolling');
+    window.clearTimeout(timelineScrollTimer);
+    timelineScrollTimer = window.setTimeout(() => {
+        timeline.classList.remove('is-scrolling');
+    }, 140);
+
+    let activeItem = timelineItems[0] || null;
+    if (bounds.top > trigger) {
+        activeItem = timelineItems[0] || null;
+    } else if (bounds.bottom < trigger) {
+        activeItem = timelineItems[timelineItems.length - 1] || null;
+    }
+    let smallestDistance = Number.POSITIVE_INFINITY;
     timelineItems.forEach((item) => {
-        const itemTop = item.getBoundingClientRect().top;
+        const itemRect = item.getBoundingClientRect();
+        const itemTop = itemRect.top + itemRect.height * .5;
         const complete = itemTop < trigger;
         item.classList.toggle('is-complete', complete);
-        if (complete && itemTop > window.innerHeight * .25) activeItem = item;
+        const distance = Math.abs(itemTop - trigger);
+        if (distance < smallestDistance && itemRect.bottom > 0 && itemRect.top < window.innerHeight) {
+            smallestDistance = distance;
+            activeItem = item;
+        }
     });
     timelineItems.forEach((item) => item.classList.toggle('is-active', item === activeItem));
 };
