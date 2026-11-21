@@ -458,7 +458,7 @@ body.light-theme details { border-color: var(--border); }
 .project-art::after { background: rgba(168, 85, 247, .12); border: 1px solid rgba(168, 85, 247, .25); border-radius: 50%; content: ""; height: 16rem; position: absolute; width: 16rem; }
 .project-art i { font-size: 4rem; position: relative; z-index: 1; }
 .project-art span { color: var(--muted); font-family: "DM Mono", monospace; font-size: .68rem; letter-spacing: .12em; position: relative; z-index: 1; }
-.project-art-bank img { height: 100%; object-fit: cover; position: absolute; width: 100%; }
+.project-art img { height: 100%; object-fit: cover; position: absolute; width: 100%; }
 .project-kicker { color: var(--violet); font-family: "DM Mono", monospace; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
 .tech-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
 .tech-tags span { background: rgba(168, 85, 247, .12); border-radius: 999px; color: #d7b8ff; font-size: .65rem; padding: .35rem .55rem; }
