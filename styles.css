@@ -1548,7 +1548,7 @@ body:not(.light-theme) .journey .current-focus.is-active .timeline-card {
 }
 .journey .current-focus .timeline-card::after {
     background: linear-gradient(
-        135deg,
+        90deg,
         transparent 0%,
         rgba(37, 99, 235, .08) 18%,
         rgba(6, 182, 212, .38) 48%,
@@ -1557,13 +1557,12 @@ body:not(.light-theme) .journey .current-focus.is-active .timeline-card {
     );
     content: "";
     height: 100%;
-    left: -35%;
+    left: 0;
     pointer-events: none;
     position: absolute;
-    top: -35%;
-    transform: translate(-130%, -130%);
+    top: 0;
+    transform: translateX(-130%);
     width: 75%;
-    height: 170%;
     z-index: 0;
     animation: journey-glass-sweep 3.2s ease-in-out infinite;
 }
