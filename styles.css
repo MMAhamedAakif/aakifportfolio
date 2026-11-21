@@ -312,6 +312,9 @@ spline-viewer { display: block; height: 14rem; margin: -2rem auto 1rem; max-widt
 @media (max-width: 600px) {
     section { padding: 6rem 1.2rem; }    .home { min-height: auto; padding-top: 6.5rem; }.home-image { min-height: 17rem; }.lequid-shape, .lequid-shape1 { height: 17rem; width: 17rem; }.img-box img { max-height: 18rem; }.img-box1 img { max-height: 18rem; }
     .change-text h3:last-child { min-width: 0; }.info-box { gap: 1rem; }.section-services, .skill-main, .skill-categories, .featured-projects { grid-template-columns: 1fr; }.professional { gap: .7rem; }.box { padding: .7rem; }.main-text { margin-bottom: 2rem; }
+    .img-about { min-height: 27rem; }.img-about .home-image1 { height: 20rem; }.img-about .lequid-shape1 { height: 17rem; width: 17rem; }
+    .info-about1, .info-about2, .info-about3 { padding: .65rem .5rem; width: min(10rem, 44vw); }.info-about1 > span, .info-about2 > span, .info-about3 > span { font-size: 1rem; }.info-about1 p, .info-about2 p, .info-about3 p { font-size: .58rem; margin-top: .2rem; }
+    .info-about1 { left: 0; top: 0; }.info-about2 { right: 0; top: 7rem; }.info-about3 { bottom: 0; left: 50%; transform: translateX(-50%); }
     .footer-content { align-items: flex-start; flex-direction: column; gap: 1rem; }.contact-left, .contact-right { padding: 1.2rem; }
 }
 @media (prefers-reduced-motion: reduce) {
