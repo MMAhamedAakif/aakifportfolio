@@ -1524,6 +1524,28 @@ body.light-theme .current-focus .timeline-card {
         linear-gradient(135deg, #2563eb, #06b6d4, #14b8a6) border-box;
     border-color: transparent;
 }
+
+/* Journey timeline rail: dark-blue base with a green scroll fill */
+.journey .timeline::before,
+body:not(.light-theme) .journey .timeline::before,
+body.light-theme .journey .timeline::before {
+    background: #092b55;
+    box-shadow: 0 0 10px rgba(9, 43, 85, .32);
+}
+.journey .timeline-progress,
+body:not(.light-theme) .journey .timeline-progress,
+body.light-theme .journey .timeline-progress {
+    background: transparent;
+    box-shadow: none;
+}
+.journey .timeline-progress span,
+body:not(.light-theme) .journey .timeline-progress span,
+body.light-theme .journey .timeline-progress span {
+    background: #65e6a5;
+    box-shadow:
+        0 0 8px rgba(101, 230, 165, .72),
+        0 0 18px rgba(52, 211, 153, .38);
+}
 body.light-theme .btn:not(.js-download-cv) {
     background:
         linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, .78)) padding-box,
